@@ -1,0 +1,373 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>JengoLife Safaris - Unforgettable Adventures in Tanzania</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Custom CSS-->
+     <link rel="stylesheet" href="{% static 'web/css/style.css' %}">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://jengolifesafaris.com/static/images/logo.png" alt="JengoLife Safaris">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#safaris">Safaris</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#destinations">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="#book-now">Book Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="display-3 fw-bold mb-4">Welcome to JengoLife Safaris</h1>
+                    <p class="lead mb-4">Luxurious safaris tailored to create unforgettable memories in the heart of Tanzania's wilderness.</p>
+                    <a href="#safaris" class="btn btn-primary btn-lg me-2">Explore Safaris</a>
+                    <a href="#contact" class="btn btn-outline-light btn-lg">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">About JengoLife Safaris</h2>
+                    <p class="lead">Creating unforgettable African safari experiences since 2010.</p>
+                    <p>At JengoLife Safaris, we believe in the transformative power of travel. Our expertly crafted safaris combine luxury, adventure, and authentic cultural experiences to create memories that last a lifetime.</p>
+                    <p>With deep connections across East Africa, we offer access to pristine wilderness areas and unique experiences that go beyond the ordinary safari.</p>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary p-3 rounded-circle me-3">
+                                    <i class="fas fa-users fa-2x text-white"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Expert Guides</h5>
+                                    <p class="mb-0">Professional & experienced</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-primary p-3 rounded-circle me-3">
+                                    <i class="fas fa-shield-alt fa-2x text-white"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Your Safety</h5>
+                                    <p class="mb-0">Our top priority</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 1" class="img-fluid rounded mb-3">
+                            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 2" class="img-fluid rounded">
+                        </div>
+                        <div class="col-6 pt-5">
+                            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 3" class="img-fluid rounded mb-3">
+                            <img src="https://images.unsplash.com/photo-1507591064344-4c6ce005b128?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 4" class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safari Packages -->
+    <section id="safaris" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title d-inline-block">Popular Safari Packages</h2>
+                <p class="lead">Discover our most sought-after safari experiences</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card">
+                        <img src="https://images.unsplash.com/photo-1599396170192-8987c5ca0c96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Serengeti Migration">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="card-title mb-0">Serengeti Migration</h5>
+                                <span class="text-primary fw-bold">$2,850</span>
+                            </div>
+                            <p class="card-text">Witness the great wildebeest migration in Tanzania's iconic Serengeti National Park.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-1"><i class="fas fa-calendar-alt text-secondary me-2"></i> 7 Days / 6 Nights</li>
+                                <li class="mb-1"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Tanzania</li>
+                                <li class="mb-1"><i class="fas fa-users text-secondary me-2"></i> Max 6 People</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card">
+                        <img src="https://images.unsplash.com/photo-1542086682-89117f5aa0a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Maasai Mara Adventure">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="card-title mb-0">Maasai Mara Adventure</h5>
+                                <span class="text-primary fw-bold">$3,200</span>
+                            </div>
+                            <p class="card-text">Explore Kenya's premier wildlife destination with spectacular game viewing year-round.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-1"><i class="fas fa-calendar-alt text-secondary me-2"></i> 6 Days / 5 Nights</li>
+                                <li class="mb-1"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Kenya</li>
+                                <li class="mb-1"><i class="fas fa-users text-secondary me-2"></i> Max 8 People</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card">
+                        <img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Gorilla Trekking">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="card-title mb-0">Gorilla Trekking</h5>
+                                <span class="text-primary fw-bold">$4,500</span>
+                            </div>
+                            <p class="card-text">An unforgettable encounter with mountain gorillas in their natural habitat.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-1"><i class="fas fa-calendar-alt text-secondary me-2"></i> 5 Days / 4 Nights</li>
+                                <li class="mb-1"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Rwanda</li>
+                                <li class="mb-1"><i class="fas fa-users text-secondary me-2"></i> Max 4 People</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary w-100">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-outline-primary">View All Packages</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title d-inline-block">What Our Travelers Say</h2>
+                <p class="lead">Authentic experiences from our guests</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Client" class="testimonial-img">
+                            <div>
+                                <h5 class="mb-0">Sarah Johnson</h5>
+                                <p class="text-muted mb-0">United States</p>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Our safari with JengoLife exceeded all expectations. The guides were knowledgeable, the accommodations luxurious, and the wildlife viewing spectacular. We'll cherish these memories forever."</p>
+                        <div class="text-secondary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="testimonial-img">
+                            <div>
+                                <h5 class="mb-0">David Müller</h5>
+                                <p class="text-muted mb-0">Germany</p>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"The attention to detail was remarkable. From the moment we arrived, every aspect of our trip was perfectly organized. The gorilla trekking experience was truly a once-in-a-lifetime adventure."</p>
+                        <div class="text-secondary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Client" class="testimonial-img">
+                            <div>
+                                <h5 class="mb-0">Emma Thompson</h5>
+                                <p class="text-muted mb-0">Australia</p>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"JengoLife Safaris provided the perfect balance of adventure and relaxation. The cultural interactions with local communities were as highlight as the wildlife sightings. Highly recommended!"</p>
+                        <div class="text-secondary">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="section-title d-inline-block">Contact Us</h2>
+                <p class="lead">Ready to plan your African adventure? Get in touch!</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Your Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Your Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="col-lg-5">
+                    <div class="mb-4">
+                        <h5 class="mb-3">Contact Information</h5>
+                        <p><i class="fas fa-map-marker-alt text-secondary me-2"></i> 123 Safari Road, Nairobi, Kenya</p>
+                        <p><i class="fas fa-phone text-secondary me-2"></i> +254 700 123 456</p>
+                        <p><i class="fas fa-envelope text-secondary me-2"></i> info@jengolifesafaris.com</p>
+                    </div>
+                    <div>
+                        <h5 class="mb-3">Office Hours</h5>
+                        <p class="mb-1">Monday - Friday: 8:00 AM - 6:00 PM</p>
+                        <p class="mb-1">Saturday: 9:00 AM - 4:00 PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <img src="https://jengolifesafaris.com/static/images/logo.png" alt="JengoLife Safaris" class="mb-3" height="50">
+                    <p>Creating unforgettable African safari experiences with a perfect blend of adventure, luxury, and authentic cultural encounters.</p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">Home</a></li>
+                        <li class="mb-2"><a href="#about">About Us</a></li>
+                        <li class="mb-2"><a href="#safaris">Safari Packages</a></li>
+                        <li class="mb-2"><a href="#destinations">Destinations</a></li>
+                        <li class="mb-2"><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                    <h5>Safari Packages</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">Serengeti Migration</a></li>
+                        <li class="mb-2"><a href="#">Maasai Mara Adventure</a></li>
+                        <li class="mb-2"><a href="#">Gorilla Trekking</a></li>
+                        <li class="mb-2"><a href="#">Luxury Beach & Safari</a></li>
+                        <li class="mb-2"><a href="#">Family Safaris</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5>Newsletter</h5>
+                    <p>Subscribe to our newsletter for safari updates and special offers.</p>
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2023 JengoLife Safaris. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-light me-3">Terms & Conditions</a>
+                    <a href="#" class="text-light">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
