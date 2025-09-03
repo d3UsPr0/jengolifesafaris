@@ -40,17 +40,23 @@
         }
         
         .btn-primary:hover {
-            background-color: #14455d;
-            border-color: #14455d;
+            background-color:var(--secondary);
+            border-color: var(--secondary);
         }
-        
+        .btn-outline-light:hover {
+            background-color:var(--secondary);
+            border-color: var(--secondary);
+            color: white;
+        }
+
         .btn-outline-primary {
             color: var(--primary);
             border-color: var(--primary);
         }
         
         .btn-outline-primary:hover {
-            background-color: var(--primary);
+            background-color: var(--secondary);
+            border-color: var(--secondary);
             color: white;
         }
         
@@ -74,13 +80,51 @@
         }
         
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            color: white;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: left;
+    overflow: hidden;
+}
+
+.hero::before, 
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    animation: fade 12s infinite;
+    transition: opacity 1s ease-in-out;
+}
+
+/* First image */
+.hero::before {
+    background-image: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+    animation-delay: 0s;
+}
+
+/* Second image */
+.hero::after {
+    background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+    animation-delay: 6s; /* half of 12s cycle */
+}
+
+@keyframes fade {
+    0%, 45% { opacity: 1; }
+    50%, 95% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+        .plan {
+            background: url('https://greatpelican-safari.com/wp-content/uploads/2024/05/DSC_3396-1-scaled.jpg') center center / cover no-repeat fixed;
+            min-height: 50vh; /* full screen height */
+            position: relative;
+            padding: 0 15px;
         }
         
         .section-title {
@@ -131,6 +175,56 @@
             margin-right: 15px;
         }
         
+.latest-articles .article-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.latest-articles .article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+}
+
+.latest-articles .card-img-top {
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.latest-articles .article-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.latest-articles .article-badge {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.latest-articles .btn-link {
+    transition: all 0.3s ease;
+}
+
+.latest-articles .btn-link:hover {
+    color: #1A5276 !important;
+    letter-spacing: 0.5px;
+}
+
+.latest-articles .btn-primary {
+    background-color: #1A5276;
+    border-color: #1A5276;
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.latest-articles .btn-primary:hover {
+    background-color: #14455d;
+    border-color: #14455d;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 82, 118, 0.3);
+}
         footer {
             background-color: var(--dark);
             color: white;
