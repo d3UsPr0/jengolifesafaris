@@ -4,24 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>JengoLife Safaris - Unforgettable Adventures in Tanzania</title>
+    <title>JengoLife Safaris - Unforgettable Adventures in Tanzania</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!--Custom CSS-->
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+     <!--Custom CSS-->
      <link rel="stylesheet" href="{% static 'web/css/style.css' %}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="https://jengolifesafaris.com/static/images/logo.png" alt="JengoLife Safaris">
+                <img src="{% static 'web/images/logo.png' %}" alt="JengoLife Safaris">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -59,7 +61,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <h1 class="display-3 fw-bold mb-4">Welcome to JengoLife Safaris</h1>
+                    <h1 class="display-3 fw-bold mb-4 welcome-text">Welcome to JengoLife Safaris</h1>
                     <p class="lead mb-4">Luxurious safaris tailored to create unforgettable memories in the heart of Tanzania's wilderness.</p>
                     <a href="#safaris" class="btn btn-primary btn-lg me-2">Explore Safaris</a>
                     <a href="#contact" class="btn btn-outline-light btn-lg">Contact Us</a>
@@ -69,8 +71,8 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-5">
-        <div class="container py-5">
+    <section id="about" class="section-spacing reduce-mobile">
+        <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <h2 class="section-title">About JengoLife Safaris</h2>
@@ -105,12 +107,12 @@
                 <div class="col-lg-6">
                     <div class="row">
                         <div class="col-6 pt-5">
-                             <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 1" class="img-fluid rounded mb-3">
-                            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 2" class="img-fluid rounded mb-3">
+                            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 1" class="img-fluid rounded mb-3">
+                            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 2" class="img-fluid rounded">
                         </div>
                         <div class="col-6 pt-5">
                             <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 3" class="img-fluid rounded mb-3">
-                            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 4" class="img-fluid rounded">
+                            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 4" class="img-fluid rounded">
                         </div>
                     </div>
                 </div>
@@ -119,7 +121,7 @@
     </section>
 
     <!-- Plan section for budget -->
-    <section class="plan d-flex align-items-center text-center text-white">
+    <section class="plan d-flex align-items-center text-center text-white py-5 section-spacing reduce-mobile">
         <div class="container">
             <h1 class="display-4 fw-bold">
                 Start planning your unforgettable Tanzanian adventure today!
@@ -134,74 +136,71 @@
         </div>
     </section>
 
-    <section class="py-5 text-center">
-  <div class="container">
-    <!-- Heading -->
-    <h2 class="fw-bold mb-5">
-      Why Choose <br> JengoLife Safaris?
-    </h2>
+    <section class="py-5 text-center section-spacing reduce-mobile">
+        <div class="container">
+            <!-- Heading -->
+            <h2 class="fw-bold mb-3">
+                Why Choose <br> JengoLife Safaris?
+            </h2>
 
-    <!-- 3 Columns -->
-    <div class="row">
-      <!-- Column 1 -->
-      <div class="col-md-4 mb-4">
-        <div class="d-flex flex-column align-items-center">
-          <div class="bg-dark rounded-circle d-flex justify-content-center align-items-center mb-3" 
-               style="width:70px; height:70px;">
-            <i class="bi bi-person-fill" style="font-size:2rem; color:#9e8c72;"></i>
-          </div>
-          <h5 class="fw-semibold" style="color:#9e8c72;">Expert Guides</h5>
-          <p class="text-muted">
-            Our knowledgeable and experienced guides are passionate about wildlife and conservation. 
-            They are dedicated to providing you with insightful and safe safari experiences.
-          </p>
-        </div>
-      </div>
+            <!-- 3 Columns -->
+            <div class="row">
+                <!-- Column 1 -->
+                <div class="col-md-4 mb-3">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="why-choose-icon">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+                        <h5 class="why-choose-title fw-semibold">Expert Guides</h5>
+                        <p class="text-muted">
+                            Our knowledgeable and experienced guides are passionate about wildlife and conservation. 
+                            They are dedicated to providing you with insightful and safe safari experiences.
+                        </p>
+                    </div>
+                </div>
 
-      <!-- Column 2 -->
-      <div class="col-md-4 mb-4">
-        <div class="d-flex flex-column align-items-center">
-          <div class="bg-dark rounded-circle d-flex justify-content-center align-items-center mb-3" 
-               style="width:70px; height:70px;">
-            <i class="bi bi-compass-fill" style="font-size:2rem; color:#9e8c72;"></i>
-          </div>
-          <h5 class="fw-semibold" style="color:#9e8c72;">Tailored Journeys</h5>
-          <p class="text-muted">
-            From luxurious honeymoons to family-friendly adventures and everything in between, 
-            our safaris are designed to cater to your interests and ensure you have the trip of a lifetime.
-          </p>
-        </div>
-      </div>
+                <!-- Column 2 -->
+                <div class="col-md-4 mb-3">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="why-choose-icon">
+                            <i class="bi bi-compass-fill"></i>
+                        </div>
+                        <h5 class="why-choose-title fw-semibold">Tailored Journeys</h5>
+                        <p class="text-muted">
+                            From luxurious honeymoons to family-friendly adventures and everything in between, 
+                            our safaris are designed to cater to your interests and ensure you have the trip of a lifetime.
+                        </p>
+                    </div>
+                </div>
 
-      <!-- Column 3 -->
-      <div class="col-md-4 mb-4">
-        <div class="d-flex flex-column align-items-center">
-          <div class="bg-dark rounded-circle d-flex justify-content-center align-items-center mb-3" 
-               style="width:70px; height:70px;">
-            <i class="bi bi-flower3" style="font-size:2rem; color:#9e8c72;"></i>
-          </div>
-          <h5 class="fw-semibold" style="color:#9e8c72;">Sustainable Tourism</h5>
-          <p class="text-muted">
-            We are committed to responsible tourism practices that protect the environment and 
-            contribute to local communities.
-          </p>
+                <!-- Column 3 -->
+                <div class="col-md-4 mb-3">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="why-choose-icon">
+                            <i class="bi bi-flower3"></i>
+                        </div>
+                        <h5 class="why-choose-title fw-semibold">Sustainable Tourism</h5>
+                        <p class="text-muted">
+                            We are committed to responsible tourism practices that protect the environment and 
+                            contribute to local communities.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Safari Packages -->
-    <section id="safaris" class="py-5 bg-light">
-        <div class="container py-5">
-            <div class="text-center mb-5">
+    <section id="safaris" class="py-5 bg-light section-spacing reduce-mobile">
+        <div class="container">
+            <div class="text-center mb-3">
                 <h2 class="section-title d-inline-block">Popular Safari Packages</h2>
                 <p class="lead">Discover our most sought-after safari experiences</p>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="package-card">
-                        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Gorilla Trekking">
+                        <img src="https://images.unsplash.com/photo-1599396170192-8987c5ca0c96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Serengeti Migration">
                         <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <h5 class="card-title mb-0">Serengeti Migration</h5>
@@ -224,7 +223,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="package-card">
-                        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Gorilla Trekking">
+                        <img src="https://images.unsplash.com/photo-1542086682-89117f5aa0a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Maasai Mara Adventure">
                         <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <h5 class="card-title mb-0">Maasai Mara Adventure</h5>
@@ -246,7 +245,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="package-card">
-                        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Gorilla Trekking">
+                        <img src="https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Gorilla Trekking">
                         <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <h5 class="card-title mb-0">Gorilla Trekking</h5>
@@ -274,9 +273,9 @@
     </section>
 
     <!-- Testimonials -->
-    <section id="testimonials" class="py-5">
+    <section id="testimonials" class="py-5 section-spacing reduce-mobile">
         <div class="container py-5">
-            <div class="text-center mb-5">
+            <div class="text-center mb-3">
                 <h2 class="section-title d-inline-block">What Our Travelers Say</h2>
                 <p class="lead">Authentic experiences from our guests</p>
             </div>
@@ -343,173 +342,259 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-5 bg-light">
-    <div class="container py-5">
-        <div class="text-center mb-5">
-            <h2 class="section-title d-inline-block">Contact Us</h2>
-            <p class="lead">Ready to plan your Tanzania adventure? Get in touch!</p>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div class="row justify-content-center">
-                    <div class="col-lg-7 mb-5 mb-lg-0">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="name" class="form-label">Your Name</label>
-                                        <input type="text" class="form-control" id="name" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <label for="email" class="form-label">Your Email</label>
-                                        <input type="email" class="form-control" id="email" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="subject" class="form-label">Subject</label>
-                                <input type="text" class="form-control" id="subject" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </form>
-                    </div>
-                    <div class="col-lg-5 ps-lg-5">
-                        <div class="mb-4">
-                            <h5 class="mb-3">Contact Information</h5>
-                            <p><i class="fas fa-map-marker-alt text-secondary me-2"></i> 123 Safari Road, Nairobi, Kenya </p>
-                            <p><i class="fas fa-phone text-secondary me-2"></i> +254 700 123 456</p>
-                            <p><i class="fas fa-envelope text-secondary me-2"></i> info@jengolifesafaris.com</p>
-                        </div>
-                        <div>
-                            <h5 class="mb-3">Office Hours</h5>
-                            <p class="mb-1">Monday - Friday: 8:00 AM - 6:00 PM</p>
-                            <p class="mb-1">Saturday: 9:00 AM - 4:00 PM</p>
-                            <p>Sunday: Closed</p>
-                        </div>
-                        <div class="social-icons mt-4">
-                            <a href="#"><i class="fab fa-facebook-f text-success"></i></a>
-                            <a href="#"><i class="fab fa-twitter text-success"></i></a>
-                            <a href="#"><i class="fab fa-instagram text-success"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in text-success"></i></a>
-                        </div>
-                    </div>
-                </div>
+    <section id="contact" class="py-5 bg-light section-spacing reduce-mobile">
+        <div class="container">
+            <div class="text-center mb-3">
+                <h2 class="section-title d-inline-block">Contact Us</h2>
+                <p class="lead">Ready to plan your Tanzania adventure? Get in touch!</p>
             </div>
-        </div>
-    </div>
-</section>
 
-<section class="latest-articles py-5 bg-light">
-    <div class="container py-5">
-        <div class="row mb-5">
-            <div class="col text-center">
-                <h2 class="section-title d-inline-block">Latest Articles</h2>
-                <p class="lead">Discover helpful tips, wildlife insights, and safari experiences from our experts</p>
+            <div class="row">
+                <!-- Form -->
+                <div class="col-lg-8 mb-3 mb-lg-0">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Your Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Your Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-lg-4 ps-lg-5">
+                    <div class="mb-4">
+                        <h5 class="mb-3">Contact Information</h5>
+                        <p><i class="fas fa-map-marker-alt text-secondary me-2"></i> 123 Safari Road, Arusha, Tanzania</p>
+                        <p><i class="fas fa-phone text-secondary me-2"></i> +255 700 123 456</p>
+                        <p><i class="fas fa-envelope text-secondary me-2"></i> info@jengolifesafaris.com</p>
+                    </div>
+                    <div>
+                        <h5 class="mb-3">Office Hours</h5>
+                        <p class="mb-1">Monday - Friday: 8:00 AM - 6:00 PM</p>
+                        <p class="mb-1">Saturday: 9:00 AM - 4:00 PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f text-success"></i></a>
+                        <a href="#"><i class="fab fa-twitter text-success"></i></a>
+                        <a href="#"><i class="fab fa-instagram text-success"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in text-success"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <div class="row g-4">
-            <!-- Article 1 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="article-card card h-100 border-0 shadow-sm">
-                    <div class="position-relative">
-                        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                             class="card-img-top" alt="Wildlife Migration">
-                        <div class="article-badge position-absolute top-0 end-0 bg-primary text-white px-3 py-2 m-3 rounded">
-                            Wildlife
+    </section>
+
+    <section id="faq" class="py-5 bg-light section-spacing reduce-mobile">
+        <div class="container">
+            <div class="text-center mb-3">
+                <h2 class="section-title d-inline-block">Frequently Asked Questions</h2>
+                <p class="lead">Let's answer some of the most popular travel questions.</p>
+            </div>
+
+            <div class="accordion" id="faqAccordion">
+                <!-- Q1 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed bg-success text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                            Is it safe to travel to Tanzania?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Tanzania is generally safe for travelers, especially in popular safari and tourist regions. Like anywhere, it's wise to remain aware of your surroundings and follow travel advisories.
                         </div>
                     </div>
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-3">
-                            <small class="text-muted"><i class="far fa-calendar me-2"></i>June 15, 2023</small>
-                            <small class="text-muted ms-3"><i class="far fa-clock me-2"></i>5 min read</small>
+                </div>
+
+                <!-- Q2 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed bg-success text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                            Which vaccinations are recommended for Tanzania?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Commonly recommended vaccines include Yellow Fever, Typhoid, Hepatitis A/B, and routine vaccines. Check with your doctor for updated advice.
                         </div>
-                        <h5 class="card-title fw-bold">The Great Wildebeest Migration: A Spectacle of Nature</h5>
-                        <p class="card-text">Discover the incredible journey of over 1.5 million wildebeest as they traverse the Serengeti ecosystem in search of greener pastures.</p>
                     </div>
-                    <div class="card-footer bg-transparent border-0 pt-0">
-                        <a href="#" class="btn btn-link text-primary p-0 fw-bold text-decoration-none">
-                            Read More <i class="fas fa-arrow-right ms-2"></i>
-                        </a>
+                </div>
+
+                <!-- Q3 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed bg-success text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                            Is food and water safe in Tanzania?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Stick to bottled or filtered water. Most safari lodges and hotels offer safe meals prepared with hygiene standards in mind.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed bg-success text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                            What happens if I get sick or injured on safari?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Safari operators are trained to handle emergencies. Medical evacuation and travel insurance are strongly recommended.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed bg-success text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                            What are the VISA requirements for Traveling to Tanzania?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Most visitors can obtain a visa on arrival or apply online for an eVisa. Requirements vary by nationality.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View All Button -->
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-outline-primary">View All FAQs</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="latest-articles py-5 bg-light section-spacing reduce-mobile">
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col text-center">
+                    <h2 class="section-title d-inline-block">Latest Articles</h2>
+                    <p class="lead">Discover helpful tips, wildlife insights, and safari experiences from our experts</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Article 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="article-card card h-100 border-0 shadow-sm">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1591393223703-3b671a1c4c52?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 class="card-img-top" alt="Wildlife Migration">
+                            <div class="article-badge position-absolute top-0 end-0 bg-primary text-white px-3 py-2 m-3 rounded">
+                                Wildlife
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <small class="text-muted"><i class="far fa-calendar me-2"></i>June 15, 2023</small>
+                                <small class="text-muted ms-3"><i class="far fa-clock me-2"></i>5 min read</small>
+                            </div>
+                            <h5 class="card-title fw-bold">The Great Wildebeest Migration: A Spectacle of Nature</h5>
+                            <p class="card-text">Discover the incredible journey of over 1.5 million wildebeest as they traverse the Serengeti ecosystem in search of greener pastures.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0">
+                            <a href="#" class="btn btn-link text-primary p-0 fw-bold text-decoration-none">
+                                Read More <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Article 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="article-card card h-100 border-0 shadow-sm">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 class="card-img-top" alt="Safari Packing">
+                            <div class="article-badge position-absolute top-0 end-0 bg-success text-white px-3 py-2 m-3 rounded">
+                                Tips
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <small class="text-muted"><i class="far fa-calendar me-2"></i>May 28, 2023</small>
+                                <small class="text-muted ms-3"><i class="far fa-clock me-2"></i>4 min read</small>
+                            </div>
+                            <h5 class="card-title fw-bold">Essential Packing Guide for Your African Safari</h5>
+                            <p class="card-text">Make the most of your safari experience with our comprehensive packing guide, including clothing, gear, and photography equipment.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0">
+                            <a href="#" class="btn btn-link text-primary p-0 fw-bold text-decoration-none">
+                                Read More <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Article 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="article-card card h-100 border-0 shadow-sm">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 class="card-img-top" alt="Bird Watching">
+                            <div class="article-badge position-absolute top-0 end-0 bg-warning text-dark px-3 py-2 m-3 rounded">
+                                Birding
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <small class="text-muted"><i class="far fa-calendar me-2"></i>April 12, 2023</small>
+                                <small class="text-muted ms-3"><i class="far fa-clock me-2"></i>7 min read</small>
+                            </div>
+                            <h5 class="card-title fw-bold">Top 10 Bird Species to Spot in Tanzania</h5>
+                            <p class="card-text">Tanzania is a birdwatcher's paradise with over 1,000 species. Here are our top picks for the most spectacular birds to look for on your safari.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0">
+                            <a href="#" class="btn btn-link text-primary p-0 fw-bold text-decoration-none">
+                                Read More <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Article 2 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="article-card card h-100 border-0 shadow-sm">
-                    <div class="position-relative">
-                        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                             class="card-img-top" alt="Safari Packing">
-                        <div class="article-badge position-absolute top-0 end-0 bg-success text-white px-3 py-2 m-3 rounded">
-                            Tips
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-3">
-                            <small class="text-muted"><i class="far fa-calendar me-2"></i>May 28, 2023</small>
-                            <small class="text-muted ms-3"><i class="far fa-clock me-2"></i>4 min read</small>
-                        </div>
-                        <h5 class="card-title fw-bold">Essential Packing Guide for Your African Safari</h5>
-                        <p class="card-text">Make the most of your safari experience with our comprehensive packing guide, including clothing, gear, and photography equipment.</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 pt-0">
-                        <a href="#" class="btn btn-link text-primary p-0 fw-bold text-decoration-none">
-                            Read More <i class="fas fa-arrow-right ms-2"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Article 3 -->
-            <div class="col-md-6 col-lg-4">
-                <div class="article-card card h-100 border-0 shadow-sm">
-                    <div class="position-relative">
-                        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
-                             class="card-img-top" alt="Bird Watching">
-                        <div class="article-badge position-absolute top-0 end-0 bg-warning text-dark px-3 py-2 m-3 rounded">
-                            Birding
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-3">
-                            <small class="text-muted"><i class="far fa-calendar me-2"></i>April 12, 2023</small>
-                            <small class="text-muted ms-3"><i class="far fa-clock me-2"></i>7 min read</small>
-                        </div>
-                        <h5 class="card-title fw-bold">Top 10 Bird Species to Spot in Tanzania</h5>
-                        <p class="card-text">Tanzania is a birdwatcher's paradise with over 1,000 species. Here are our top picks for the most spectacular birds to look for on your safari.</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 pt-0">
-                        <a href="#" class="btn btn-link text-primary p-0 fw-bold text-decoration-none">
-                            Read More <i class="fas fa-arrow-right ms-2"></i>
-                        </a>
-                    </div>
+            <div class="row mt-5">
+                <div class="col text-center">
+                    <a href="#" class="btn btn-outline-primary">
+                       View All Articles
+                    </a>
                 </div>
             </div>
         </div>
-        
-        <div class="row mt-5">
-            <div class="col text-center">
-                <a href="#" class="btn btn-outline-primary">
-                   View All Articles
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <img src="https://jengolifesafaris.com/static/images/logo.png" alt="JengoLife Safaris" class="mb-3" height="50">
+                    <img src="{% static 'web/images/logo.png' %}" alt="JengoLife Safaris" class="mb-3" height="50">
                     <p>Creating unforgettable Tanzania safari experiences with a perfect blend of adventure, luxury, and authentic cultural encounters.</p>
                 </div>
                 <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
@@ -538,7 +623,7 @@
                     <form>
                         <div class="input-group mb-3">
                             <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email">
-                            <button class="btn btn-primary" type="button">Subscribe</button>
+                            <button class="btn btn-success" type="button">Subscribe</button>
                         </div>
                     </form>
                 </div>
@@ -551,6 +636,16 @@
                 <div class="col-md-6 text-md-end">
                     <a href="#" class="text-light me-3">Terms & Conditions</a>
                     <a href="#" class="text-light">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col text-center">
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
