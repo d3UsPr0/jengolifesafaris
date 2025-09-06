@@ -149,6 +149,10 @@
             margin-top: 15px;
         }
         
+        .safari-title {
+            font-weight: 600;
+            color: var(--primary);
+        }
         .package-card {
             border-radius: 10px;
             overflow: hidden;
