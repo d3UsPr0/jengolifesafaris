@@ -66,7 +66,13 @@
             border-color: var(--secondary);
             color: white;
         }
-        
+        .card-footer .btn-link.text-primary {
+    transition: color 0.3s ease;
+}
+
+.card-footer .btn-link.text-primary:hover {
+    color: var(--secondary) !important;
+}
         .navbar {
             padding: 15px 0;
             transition: all 0.3s ease;
@@ -85,6 +91,30 @@
         .navbar-nav .nav-link:hover {
             color: var(--primary);
         }
+
+        
+.navbar-toggler {
+    position: relative;
+    border: none;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+}
+
+.navbar-toggler-icon, .close-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+}
+
+.close-icon {
+    font-size: 1.2rem;
+}
+
+
+        
         
         .hero {
             position: relative;
@@ -128,7 +158,7 @@
         }
         
         .plan {
-            background: url('https://greatpelican-safari.com/wp-content/uploads/2024/05/DSC_3396-1-scaled.jpg') center center / cover no-repeat fixed;
+            background: url('https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80') center center / cover no-repeat fixed;
             min-height: 50vh; /* full screen height */
             position: relative;
             padding: 0 15px;
@@ -162,13 +192,14 @@
             height: 100%;
         }
         
-        .package-card:hover {
-            transform: translateY(-10px);
-        }
-        
         .package-card img {
             height: 250px;
             object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .package-card:hover img {
+            transform: scale(1.05); /* Scales the image to 105% on hover */
         }
         
         .testimonial-card {
@@ -294,6 +325,26 @@
         .why-choose-title {
             color: var(--secondary);
         }
+        /* Back to Top Button */
+#backToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  display: none;
+  z-index: 99;
+  border: none;
+  background-color: var(--primary);
+  color: var(--secondary);
+  transition: all 0.3s ease;
+}
+
+#backToTopBtn:hover {
+  background-color: var(--secondary);
+  color: var(--primary);
+  transform: translateY(-3px);
+}
 
         /* Responsive section spacing */
 .section-spacing {

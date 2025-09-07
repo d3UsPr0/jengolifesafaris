@@ -1,0 +1,161 @@
+    {% load static %}
+    <!-- Latest Articles Section -->
+    <section class="latest-articles py-5 bg-light section-spacing reduce-mobile">
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col text-center">
+                    <h2 class="section-title d-inline-block">Latest Articles</h2>
+                    <p class="lead">Discover helpful tips, wildlife insights, and safari experiences from our experts</p>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Article 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="article-card card h-100 border-0 shadow-sm">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 class="card-img-top" alt="Wildlife Migration">
+                            <div class="article-badge position-absolute top-0 end-0 bg-primary text-white px-3 py-2 m-3 rounded">
+                                Wildlife
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <small class="text-muted"><i class="far fa-calendar me-2"></i>June 15, 2023</small>
+                                <small class="text-muted ms-3"><i class="far fa-clock me-2"></i>5 min read</small>
+                            </div>
+                            <h5 class="card-title fw-bold">The Great Wildebeest Migration: A Spectacle of Nature</h5>
+                            <p class="card-text">Discover the incredible journey of over 1.5 million wildebeest as they traverse the Serengeti ecosystem in search of greener pastures.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0">
+                            <a href="#" class="btn btn-link text-primary p-0 fw-bold text-decoration-none">
+                                Read More <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Article 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="article-card card h-100 border-0 shadow-sm">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 class="card-img-top" alt="Safari Packing">
+                            <div class="article-badge position-absolute top-0 end-0 bg-success text-white px-3 py-2 m-3 rounded">
+                                Tips
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <small class="text-muted"><i class="far fa-calendar me-2"></i>May 28, 2023</small>
+                                <small class="text-muted ms-3"><i class="far fa-clock me-2"></i>4 min read</small>
+                            </div>
+                            <h5 class="card-title fw-bold">Essential Packing Guide for Your African Safari</h5>
+                            <p class="card-text">Make the most of your safari experience with our comprehensive packing guide, including clothing, gear, and photography equipment.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0">
+                            <a href="#" class="btn btn-link text-primary p-0 fw-bold text-decoration-none">
+                                Read More <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Article 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="article-card card h-100 border-0 shadow-sm">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                                 class="card-img-top" alt="Bird Watching">
+                            <div class="article-badge position-absolute top-0 end-0 bg-warning text-dark px-3 py-2 m-3 rounded">
+                                Birding
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <small class="text-muted"><i class="far fa-calendar me-2"></i>April 12, 2023</small>
+                                <small class="text-muted ms-3"><i class="far fa-clock me-2"></i>7 min read</small>
+                            </div>
+                            <h5 class="card-title fw-bold">Top 10 Bird Species to Spot in Tanzania</h5>
+                            <p class="card-text">Tanzania is a birdwatcher's paradise with over 1,000 species. Here are our top picks for the most spectacular birds to look for on your safari.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 pt-0">
+                            <a href="#" class="btn btn-link text-primary p-0 fw-bold text-decoration-none">
+                                Read More <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col text-center">
+                    <a href="#" class="btn btn-outline-primary">
+                       View All Articles
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <img src="{% static 'web/images/logo.png' %}" alt="JengoLife Safaris" class="mb-3" height="50">
+                    <p>Creating unforgettable Tanzania safari experiences with a perfect blend of adventure, luxury, and authentic cultural encounters.</p>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">Home</a></li>
+                        <li class="mb-2"><a href="#about">About Us</a></li>
+                        <li class="mb-2"><a href="#safaris">Safari Packages</a></li>
+                        <li class="mb-2"><a href="#destinations">Destinations</a></li>
+                        <li class="mb-2"><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                    <h5>Safari Packages</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#">Serengeti Migration</a></li>
+                        <li class="mb-2"><a href="#">Maasai Mara Adventure</a></li>
+                        <li class="mb-2"><a href="#">Gorilla Trekking</a></li>
+                        <li class="mb-2"><a href="#">Luxury Beach & Safari</a></li>
+                        <li class="mb-2"><a href="#">Family Safaris</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5>Newsletter</h5>
+                    <p>Subscribe to our newsletter for safari updates and special offers.</p>
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2023 JengoLife Safaris. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-light me-3">Terms & Conditions</a>
+                    <a href="#" class="text-light">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col text-center">
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
