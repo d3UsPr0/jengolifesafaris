@@ -98,3 +98,29 @@ document.addEventListener('DOMContentLoaded', function() {
         this.blur(); // Remove focus after click
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Initialize scrolling for both sections
+  initCarouselScroll("destinations");
+  initCarouselScroll("safaris");
+});
+
+function initCarouselScroll(sectionId) {
+  const scrollContainer = document.querySelector(
+    `#${sectionId} .safari-packages-scroll`
+  );
+  const leftBtn = document.querySelector(`#${sectionId} .carousel-btn-left`);
+  const rightBtn = document.querySelector(`#${sectionId} .carousel-btn-right`);
+
+  if (scrollContainer && leftBtn && rightBtn) {
+    const scrollAmount = 320; // Width of card + gap
+
+    leftBtn.addEventListener("click", function () {
+      scrollContainer.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    });
+
+    rightBtn.addEventListener("click", function () {
+      scrollContainer.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    });
+  }
+}

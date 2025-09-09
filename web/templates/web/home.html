@@ -1,54 +1,36 @@
   {% extends "web/base.html" %}
   {% block content %}
   <!-- About Section -->
+   {% include "web/includes/hero.html" %}
     <section id="about" class="section-spacing reduce-mobile">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h2 class="section-title">Jengo Life Safaris</h2>
-                    <p class="lead">Creating unforgettable African safari experiences since 2010.</p>
-                    <p>At JengoLife Safaris, we believe in the transformative power of travel. Our expertly crafted safaris combine luxury, adventure, and authentic cultural experiences to create memories that last a lifetime.</p>
-                    <p>With deep connections across East Africa, we offer access to pristine wilderness areas and unique experiences that go beyond the ordinary safari.</p>
-                    <div class="row mt-4">
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="bg-primary p-3 rounded-circle me-3">
-                                    <i class="fas fa-users fa-2x text-white"></i>
-                                </div>
-                                <div>
-                                    <h5 class="mb-0">Expert Guides</h5>
-                                    <p class="mb-0">Professional & experienced</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="bg-primary p-3 rounded-circle me-3">
-                                    <i class="fas fa-shield-alt fa-2x text-white"></i>
-                                </div>
-                                <div>
-                                    <h5 class="mb-0">Your Safety</h5>
-                                    <p class="mb-0">Our top priority</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="container-fluid">
+        <div class="row align-items-start">
+            <div class="col-lg-6">
+                <h2 class="section-title">Jengo Life Safaris</h2>
+                <p class="lead">Creating unforgettable African safari experiences since 2010.</p>
+                <p>At JengoLife Safaris, we believe in the transformative power of travel. Our expertly crafted safaris combine luxury, adventure, and authentic cultural experiences to create memories that last a lifetime.</p>
+                <p>With deep connections across East Africa, we offer access to pristine wilderness areas and unique experiences that go beyond the ordinary safari.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                
+                <a href="{% url 'about' %}" class="btn btn-light shadow-sm text-primary fw-bold btn-all">Read more <i class="bi bi-arrow-up-right ms-2"></i></a></p>
+                <div class="row mt-4">
                 </div>
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-6 pt-5">
-                            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 1" class="img-fluid rounded mb-3">
-                            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 2" class="img-fluid rounded">
-                        </div>
-                        <div class="col-6 pt-5">
-                            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 3" class="img-fluid rounded mb-3">
-                            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 4" class="img-fluid rounded">
-                        </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-6">
+                        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 1" class="img-fluid rounded mb-3">
+                        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 2" class="img-fluid rounded">
+                    </div>
+                    <div class="col-6">
+                        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 3" class="img-fluid rounded mb-3">
+                        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 4" class="img-fluid rounded">
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Stats Section -->
     <section id="stats" class="py-5 bg-light section-spacing reduce-mobile">
@@ -56,17 +38,17 @@
             <div class="row text-center">
 
                 <div class="col-md-4">
-                    <h2 class="counter display-4 fw-bold" data-target="15">0</h2>
+                    <h2 class="counter fw-bold" data-target="15">0</h2>
                     <p class="text-muted">Years of Experience</p>
                 </div>
 
                 <div class="col-md-4">
-                    <h2 class="counter display-4 fw-bold" data-target="230">0</h2>
+                    <h2 class="counter fw-bold" data-target="230">0</h2>
                     <p class="text-muted">Happy Customers</p>
                 </div>
 
                 <div class="col-md-4">
-                    <h2 class="counter display-4 fw-bold" data-target="125">0</h2>
+                    <h2 class="counter fw-bold" data-target="125">0</h2>
                     <p class="text-muted">Accommodations</p>
                 </div>
             </div>
@@ -74,98 +56,319 @@
     </section>
 
     <!-- Safari Packages -->
-    <section id="safaris" class="py-5 bg-light section-spacing reduce-mobile">
-        <div class="container">
-            <div class="text-center mb-3">
-                <h2 class="section-title d-inline-block">Popular Safari Packages</h2>
-                <p class="lead">Discover our most sought-after safari experiences</p>
+    <section id="destinations" class="bg-light ">
+            <div class="container-fluid">
+                <div class="text-center">
+                    <h2 class="section-title d-inline-block">Top Destinations</h2>
+                    <!-- flex wrapper for paragraph + button -->
+                    <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
+                    <p class="lead mb-0">Discover our most sought-after safari experiences</p>
+                    <a href="#" class="btn btn-light rounded-pill shadow-sm px-4 py-2 text-primary btn-all">View all destinations <i class="bi bi-arrow-up-right ms-2"></i></a>
+                </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="package-card">
-                        <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Serengeti Migration">
-                        <div class="card-body p-4">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h5 class="card-title mb-0">Serengeti Migration</h5>
-                                <span class="text-primary fw-bold">$2,850</span>
+        
+        <div class="position-relative">
+            <!-- Left Navigation Button -->
+            <button class="carousel-btn carousel-btn-left ms-2" aria-label="Previous packages">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <!-- Safari Packages Container -->
+            <div class="safari-packages-container">
+                <div class="safari-packages-scroll">
+                    <!-- Card 1 -->
+                    <div class="safari-package-card">
+                        <div class="package-image-container">
+                            <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Serengeti Migration">
+                            <div class="package-title-overlay">
+                                <h5>Serengeti Migration</h5>
                             </div>
-                            <p class="card-text">Witness the great wildebeest migration in Tanzania's iconic Serengeti National Park.</p>
+                        </div>
+                        <div class="package-details">
+                            <p>Experience the breathtaking wildlife migration in the Serengeti, where millions of animals traverse the plains in search of greener pastures.</p>
+                            <div class="text-center">
+                                <a href="{% url 'safari' %}" class="btn btn-outline-primary btn-sm">
+                                    View Safaris <i class="fas fa-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="safari-package-card">
+                        <div class="package-image-container">
+                            <img src="https://images.unsplash.com/photo-1551085254-e96b210db58a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Maasai Mara Adventure">
+                            <div class="package-title-overlay">
+                                <h5>Maasai Mara Adventure</h5>
+                            </div>
+                        </div>
+                        <div class="package-details">
+                            <p>Experience the breathtaking wildlife migration in the Serengeti, where millions of animals traverse the plains in search of greener pastures.</p>
+                            <div class="text-center">
+                                <a href="{% url 'safari' %}" class="btn btn-outline-primary btn-sm">
+                                    View Safaris <i class="fas fa-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div class="safari-package-card">
+                        <div class="package-image-container">
+                            <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gorilla Trekking">
+                            <div class="package-title-overlay">
+                                <h5>Gorilla Trekking</h5>
+                            </div>
+                        </div>
+                        <div class="package-details">
+                            <p>Experience the breathtaking wildlife migration in the Serengeti, where millions of animals traverse the plains in search of greener pastures.</p>
+                            <div class="text-center">
+                                <a href="{% url 'safari' %}" class="btn btn-outline-primary btn-sm">
+                                    View Safaris <i class="fas fa-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 4 -->
+                    <div class="safari-package-card">
+                        <div class="package-image-container">
+                            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Lion Safari">
+                            <div class="package-title-overlay">
+                                <h5>Lion King Safari</h5>
+                            </div>
+                        </div>
+                        <div class="package-details">
+                            <p>Experience the breathtaking wildlife migration in the Serengeti, where millions of animals traverse the plains in search of greener pastures.</p>
+                            <div class="text-center">
+                                <a href="{% url 'safari' %}" class="btn btn-outline-primary btn-sm">
+                                    View Safaris <i class="fas fa-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 5 -->
+                    <div class="safari-package-card">
+                        <div class="package-image-container">
+                            <img src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Elephant Safari">
+                            <div class="package-title-overlay">
+                                <h5>Elephant Wilderness</h5>
+                            </div>
+                        </div>
+                        <div class="package-details">
+                            <p>Experience the breathtaking wildlife migration in the Serengeti, where millions of animals traverse the plains in search of greener pastures.</p>
+                            <div class="text-center">
+                                <a href="{% url 'safari' %}" class="btn btn-outline-primary btn-sm">
+                                    View Safaris <i class="fas fa-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 6 -->
+                    <div class="safari-package-card">
+                        <div class="package-image-container">
+                            <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Big Five Safari">
+                            <div class="package-title-overlay">
+                                <h5>Big Five Safari</h5>
+                            </div>
+                        </div>
+                        <div class="package-details">
+                            <p>Experience the breathtaking wildlife migration in the Serengeti, where millions of animals traverse the plains in search of greener pastures.</p>
+                            <div class="text-center">
+                                <a href="{% url 'safari' %}" class="btn btn-outline-primary btn-sm">
+                                    View Safaris <i class="fas fa-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Navigation Button -->
+            <button class="carousel-btn carousel-btn-right me-2" aria-label="Next packages">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        </div>
+    </section>
+
+    <section id="safaris" class="bg-light">
+            <div class="container-fluid">
+                <div class="text-center">
+                    <h2 class="section-title d-inline-block">Popular Safari Packages</h2>
+            
+                    <!-- flex wrapper for paragraph + button -->
+                    <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
+                    <p class="lead mb-0">Discover our most sought-after safari experiences</p>
+                    <a href="#" class="btn btn-light rounded-pill shadow-sm px-4 py-2 text-primary btn-all">View all popular packages <i class="bi bi-arrow-up-right ms-2"></i></a>
+                </div>
+            </div>
+        
+        <div class="position-relative">
+            <!-- Left Navigation Button -->
+            <button class="carousel-btn carousel-btn-left ms-2" aria-label="Previous packages">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <!-- Safari Packages Container -->
+            <div class="safari-packages-container">
+                <div class="safari-packages-scroll">
+                    <!-- Card 1 -->
+                    <div class="safari-package-card">
+                        <div class="package-image-container">
+                            <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Serengeti Migration">
+                            <div class="package-title-overlay">
+                                <h5>Serengeti Migration</h5>
+                            </div>
+                        </div>
+                        <div class="package-details">
                             <ul class="list-unstyled">
                                 <li class="mb-1"><i class="fas fa-calendar-alt text-secondary me-2"></i> 7 Days / 6 Nights</li>
                                 <li class="mb-1"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Tanzania</li>
                                 <li class="mb-1"><i class="fas fa-users text-secondary me-2"></i> Max 6 People</li>
                             </ul>
-                            
-                            <div class="card-footer bg-transparent border-0 pt-0">
-                                <a href="#" class="btn btn-link text-primary p-0 fw-bold text-decoration-none">
-                                    View details <i class="fas fa-arrow-right ms-2"></i>
+                            <div class="text-center">
+                                <a href="{% url 'safari' %}" class="btn btn-outline-primary btn-sm">
+                                    View details <i class="fas fa-arrow-right ms-1"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="package-card">
-                        <img src="https://images.unsplash.com/photo-1551085254-e96b210db58a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Maasai Mara Adventure">
-                        <div class="card-body p-4">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h5 class="card-title mb-0">Maasai Mara Adventure</h5>
-                                <span class="text-primary fw-bold">$3,200</span>
+                    
+                    <!-- Card 2 -->
+                    <div class="safari-package-card">
+                        <div class="package-image-container">
+                            <img src="https://images.unsplash.com/photo-1551085254-e96b210db58a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Maasai Mara Adventure">
+                            <div class="package-title-overlay">
+                                <h5>Maasai Mara Adventure</h5>
                             </div>
-                            <p class="card-text">Explore Kenya's premier wildlife destination with spectacular game viewing year-round.</p>
+                        </div>
+                        <div class="package-details">
                             <ul class="list-unstyled">
                                 <li class="mb-1"><i class="fas fa-calendar-alt text-secondary me-2"></i> 6 Days / 5 Nights</li>
                                 <li class="mb-1"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Kenya</li>
                                 <li class="mb-1"><i class="fas fa-users text-secondary me-2"></i> Max 8 People</li>
                             </ul>
-                            <div class="card-footer bg-transparent border-0 pt-0">
-                                <a href="#" class="btn btn-link text-primary p-0 fw-bold text-decoration-none">
-                                    View details <i class="fas fa-arrow-right ms-2"></i>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                    View details <i class="fas fa-arrow-right ms-1"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="package-card">
-                        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Gorilla Trekking">
-                        <div class="card-body p-4">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h5 class="card-title mb-0">Gorilla Trekking</h5>
-                                <span class="text-primary fw-bold">$4,500</span>
+                    
+                    <!-- Card 3 -->
+                    <div class="safari-package-card">
+                        <div class="package-image-container">
+                            <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gorilla Trekking">
+                            <div class="package-title-overlay">
+                                <h5>Gorilla Trekking</h5>
                             </div>
-                            <p class="card-text">An unforgettable encounter with mountain gorillas in their natural habitat.</p>
+                        </div>
+                        <div class="package-details">
                             <ul class="list-unstyled">
                                 <li class="mb-1"><i class="fas fa-calendar-alt text-secondary me-2"></i> 5 Days / 4 Nights</li>
                                 <li class="mb-1"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Rwanda</li>
                                 <li class="mb-1"><i class="fas fa-users text-secondary me-2"></i> Max 4 People</li>
                             </ul>
-                            <div class="card-footer bg-transparent border-0 pt-0">
-                                <a href="#" class="btn btn-link text-primary p-0 fw-bold text-decoration-none">
-                                    View details <i class="fas fa-arrow-right ms-2"></i>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                    View details <i class="fas fa-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 4 -->
+                    <div class="safari-package-card">
+                        <div class="package-image-container">
+                            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Lion Safari">
+                            <div class="package-title-overlay">
+                                <h5>Lion King Safari</h5>
+                            </div>
+                        </div>
+                        <div class="package-details">
+                            <ul class="list-unstyled">
+                                <li class="mb-1"><i class="fas fa-calendar-alt text-secondary me-2"></i> 5 Days / 4 Nights</li>
+                                <li class="mb-1"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Serengeti</li>
+                                <li class="mb-1"><i class="fas fa-users text-secondary me-2"></i> Max 7 People</li>
+                            </ul>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                    View details <i class="fas fa-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 5 -->
+                    <div class="safari-package-card">
+                        <div class="package-image-container">
+                            <img src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Elephant Safari">
+                            <div class="package-title-overlay">
+                                <h5>Elephant Wilderness</h5>
+                            </div>
+                        </div>
+                        <div class="package-details">
+                            <ul class="list-unstyled">
+                                <li class="mb-1"><i class="fas fa-calendar-alt text-secondary me-2"></i> 6 Days / 5 Nights</li>
+                                <li class="mb-1"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Amboseli</li>
+                                <li class="mb-1"><i class="fas fa-users text-secondary me-2"></i> Max 6 People</li>
+                            </ul>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                    View details <i class="fas fa-arrow-right ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 6 -->
+                    <div class="safari-package-card">
+                        <div class="package-image-container">
+                            <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Big Five Safari">
+                            <div class="package-title-overlay">
+                                <h5>Big Five Safari</h5>
+                            </div>
+                        </div>
+                        <div class="package-details">
+                            <ul class="list-unstyled">
+                                <li class="mb-1"><i class="fas fa-calendar-alt text-secondary me-2"></i> 8 Days / 7 Nights</li>
+                                <li class="mb-1"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Kruger Park</li>
+                                <li class="mb-1"><i class="fas fa-users text-secondary me-2"></i> Max 8 People</li>
+                            </ul>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                    View details <i class="fas fa-arrow-right ms-1"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="text-center mt-4">
-                <a href="#" class="btn btn-outline-primary">View All Packages</a>
-            </div>
+            
+            <!-- Right Navigation Button -->
+            <button class="carousel-btn carousel-btn-right me-2" aria-label="Next packages">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
         </div>
     </section>
 
     <!-- Plan section for budget -->
     <section class="plan d-flex align-items-center text-center text-white py-5 section-spacing reduce-mobile">
         <div class="container">
-            <h3 class="display-4 fw-bold">
+            <h3 class="fw-bold">
                 Start planning your unforgettable Tanzanian adventure today!
             </h3>
             <p class="lead mb-4">
             Explore our Tanzania Tours & Safaris or get in touch with our travel experts
             to craft a personalized itinerary tailored to your preferences.
             </p>
-            <a href="#contact" class="btn btn-primary btn-lg px-5">
+            <a href="#contact" class="btn btn-primary">
                 Let's Start Planning
             </a>
         </div>
@@ -175,14 +378,14 @@
     <section class="py-5 text-center section-spacing reduce-mobile">
         <div class="container">
             <!-- Heading -->
-            <h2 class="fw-bold mb-3">
-                Why Choose <br> JengoLife Safaris?
+            <h2 class="section-title d-inline-block">
+                Why Choose <br> Jengo Life Safaris?
             </h2>
 
             <!-- 3 Columns -->
             <div class="row">
                 <!-- Column 1 -->
-                <div class="col-md-4 mb-3">
+                <div class="col-md-4">
                     <div class="d-flex flex-column align-items-center">
                         <div class="why-choose-icon">
                             <i class="bi bi-person-fill"></i>
@@ -196,7 +399,7 @@
                 </div>
 
                 <!-- Column 2 -->
-                <div class="col-md-4 mb-3">
+                <div class="col-md-4">
                     <div class="d-flex flex-column align-items-center">
                         <div class="why-choose-icon">
                             <i class="bi bi-compass-fill"></i>
@@ -210,12 +413,12 @@
                 </div>
 
                 <!-- Column 3 -->
-                <div class="col-md-4 mb-3">
+                <div class="col-md-4">
                     <div class="d-flex flex-column align-items-center">
                         <div class="why-choose-icon">
                             <i class="bi bi-flower3"></i>
                         </div>
-                        <h5 class="why-choose-title fw-semibold">Sustainable Tourism</h5>
+                        <h5 class="why-choose-title fw-semibold">Reliable Safety</h5>
                         <p class="text-muted">
                             We are committed to responsible tourism practices that protect the environment and 
                             contribute to local communities.
@@ -227,9 +430,9 @@
     </section>
 
     <!-- Testimonials -->
-    <section id="testimonials" class="py-5 section-spacing reduce-mobile">
-        <div class="container py-5">
-            <div class="text-center mb-3">
+    <section id="testimonials" class="">
+        <div class="container">
+            <div class="text-center">
                 <h2 class="section-title d-inline-block">What Our Travelers Say</h2>
                 <p class="lead">Authentic experiences from our guests</p>
             </div>
@@ -243,7 +446,7 @@
                                 <p class="text-muted mb-0">United States</p>
                             </div>
                         </div>
-                        <p class="testimonial-text">"Our safari with JengoLife exceeded all expectations. The guides were knowledgeable, the accommodations luxurious, and the wildlife viewing spectacular. We'll cherish these memories forever."</p>
+                        <p class="testimonial-text">"Our safari with Jengo Life exceeded all expectations. The guides were knowledgeable, the accommodations luxurious, and the wildlife viewing spectacular. We'll cherish these memories forever."</p>
                         <div class="text-secondary">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -281,7 +484,7 @@
                                 <p class="text-muted mb-0">Australia</p>
                             </div>
                         </div>
-                        <p class="testimonial-text">"JengoLife Safaris provided the perfect balance of adventure and relaxation. The cultural interactions with local communities were as highlight as the wildlife sightings. Highly recommended!"</p>
+                        <p class="testimonial-text">"Jengo Life Safaris provided the perfect balance of adventure and relaxation. The cultural interactions with local communities were as highlight as the wildlife sightings. Highly recommended!"</p>
                         <div class="text-secondary">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -438,7 +641,7 @@
                 </div>
             </div>
             <div class="text-center mt-4">
-                <a href="#" class="btn btn-outline-primary">View All FAQs</a>
+                <a href="#" class="btn btn-outline-primary">View all FAQs</a>
             </div>
         </div>
     </section>

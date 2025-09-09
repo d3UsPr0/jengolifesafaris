@@ -158,7 +158,7 @@
         }
         
         .plan {
-            background: url('https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80') center center / cover no-repeat fixed;
+            background: url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80') center center / cover no-repeat fixed;
             min-height: 50vh; /* full screen height */
             position: relative;
             padding: 0 15px;
@@ -166,8 +166,9 @@
         
         .section-title {
             position: relative;
-            margin-bottom: 40px;
-            font-weight: 700;
+            font-weight: 500;
+            font-size: 1.5 rem;
+
         }
         
         .section-title:after {
@@ -178,30 +179,189 @@
             background: var(--secondary);
             margin-top: 15px;
         }
-        
-        .safari-title {
-            font-weight: 600;
-            color: var(--primary);
-        }
-        .package-card {
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-            height: 100%;
-        }
-        
-        .package-card img {
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
 
-        .package-card:hover img {
-            transform: scale(1.05); /* Scales the image to 105% on hover */
-        }
-        
+#about, 
+#safaris, 
+#destinations, 
+#testimonials, 
+#contact {
+  scroll-margin-top: 90px;
+}
+.hero2 {
+    display: flex;
+    align-items: center;
+    text-align: start;
+    color: white;
+    background: url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    height: 30vh; /* default height */
+    min-height: 20vh; /* ensures small height but allows expansion if text is long */
+    padding: 2rem 1rem; /* space inside */
+    display: flex;
+    align-items: center;
+}
+.hero2 h1 {
+    white-space: normal;   /* allow wrapping */
+    word-break: break-word; /* break long words if needed */
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+    .hero2 {
+        height: 20vh; /* reduced height */
+    }
+
+    .hero2 h1 {
+        font-size: 1.5rem; /* reduce heading size */
+        line-height: 1.2; /* adjust line height */
+        font-size: 1.2rem; /* reduce font size */
+    }
+}
+.list-unstyled i {
+    width: 20px;
+    text-align: center;
+}
+
+.btn-all:hover {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: white !important;
+}
+
+.safari-packages-container {
+    overflow-x: hidden;
+    padding: 10px 0;
+    position: relative;
+}
+
+.safari-packages-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 10px 5px;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.safari-packages-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+.safari-package-card {
+    flex: 0 0 300px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.safari-package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.package-image-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.package-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.safari-package-card:hover .package-image-container img {
+    transform: scale(1.05);
+}
+
+.package-title-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(0, 0, 0, 0.7) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 15px;
+}
+
+.package-title-overlay h5 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.package-details {
+    padding: 15px;
+}
+
+.package-details .list-unstyled {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: var(--secondary);
+    color: white;
+    border-color: var(--secondary);
+}
+
+.carousel-btn-left {
+    left: -20px;
+}
+
+.carousel-btn-right {
+    right: -20px;
+}
+
+@media (max-width: 768px) {
+    .safari-package-card {
+        flex: 0 0 280px;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .carousel-btn-left {
+        left: -15px;
+    }
+    
+    .carousel-btn-right {
+        right: -15px;
+    }
+    
+    .package-title-overlay h5 {
+        font-size: 1.1rem;
+    }
+}
+
         .testimonial-card {
             background: white;
             padding: 30px;
@@ -243,7 +403,7 @@
         }
 
         .latest-articles .card-img-top {
-            height: 220px;
+            height: 100px;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
