@@ -1,43 +1,267 @@
 {% extends "web/base.html" %}
 {% load static %}
 {% block content %}
-<!-- Hero Safari details -->
 <section class="hero2">
     <div class="container">
-        <h1 class="fw-bold display-4">Tanzania Family Safari 12 Days Tanzania About JengoLife SafarisAbout JengoLife Safaris</h1>
-        <a href="#" class="btn btn-primary btn-lg mt-3">Book Now</a>
+        <h1 class="fw-bold">
+            Tanzania Family Safari 12 Days
+        </h1>
+        <a href="#" class="btn btn-primary btn-sm mt-3">Book Now</a>
     </div>
 </section>
-<!-- Safari details + breadcrumbs -->
-<section id="safari" class="py-5">
+
+<section id="safari" class="py-3">
     <div class="container">
         <div class="row">
-            <!-- Safari description -->
             <div class="col-lg-9">
-                <p class="lead safari-title">Creating unforgettable African safari experiences since 2010.</p>
-                <p>At JengoLife Safaris, we believe in the transformative power of travel. Our expertly crafted safaris combine luxury, adventure, and authentic cultural experiences to create memories that last a lifetime.</p>
-                <p>With deep connections across East Africa, we offer access to pristine wilderness areas and unique experiences that go beyond the ordinary safari.</p>
-            </div>
+                <p class="lead safari-title">
+                    Creating unforgettable African safari experiences since 2010.
+                </p>
+                <p>
+                    At JengoLife Safaris, we believe in the transformative power of travel.
+                    Our expertly crafted safaris combine luxury, adventure, and authentic cultural
+                    experiences to create memories that last a lifetime.
+                </p>
+                <p>
+                    With deep connections across East Africa, we offer access to pristine wilderness
+                    areas and unique experiences that go beyond the ordinary safari.
+                </p>
+                <p>
+                    Our team of passionate guides and travel experts are dedicated to providing
+                    personalized service, ensuring that every detail of your journey is seamless
+                    and tailored to your interests.
+                </p>
+                <p>
+                    Our commitment to sustainable tourism ensures that your journey not only enriches your life but also supports the local communities and ecosystems we visit.
+                </p>
 
-            <!-- Related safaris -->
+                <div class="itinerary mt-3">
+                    <h3 class="section-title" style="color: var(--primary);">Day-by-Day Itinerary</h3>
+<small class="text-muted d-block">Click a day to view details</small>
+
+
+                    <div class="accordion custom-accordion mt-3 mb-4" id="itineraryAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="day1Heading">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#day1" aria-expanded="true" aria-controls="day1">
+                                    <div class="day-header">
+                                        <div class="day-number">
+                                            <span>1</span>
+                                        </div>
+                                        <div class="day-title">
+                                            <h4 class="mb-0">Arrival in Arusha</h4>
+                                            <p class="text-muted mb-0">Welcome to Tanzania</p>
+                                        </div>
+                                        <div class="day-icon">
+                                            <i class="fas fa-plane-arrival"></i>
+                                        </div>
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="day1" class="accordion-collapse collapse show" aria-labelledby="day1Heading"
+                                 data-bs-parent="#itineraryAccordion">
+                                <div class="accordion-body">
+                                    <p>You will be met at the airport by our representative and transferred to your hotel in Arusha. Relax and prepare for your adventure.</p>
+                                    <div class="day-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-bed text-primary"></i>
+                                            <span>Arusha Hotel</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-utensils text-primary"></i>
+                                            <span>Dinner Included</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="day2Heading">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#day2" aria-expanded="false" aria-controls="day2">
+                                    <div class="day-header">
+                                        <div class="day-number">
+                                            <span>2</span>
+                                        </div>
+                                        <div class="day-title">
+                                            <h4 class="mb-0">Tarangire National Park</h4>
+                                            <p class="text-muted mb-0">Elephants & Baobabs</p>
+                                        </div>
+                                        <div class="day-icon">
+                                            <i class="fas fa-elephant"></i>
+                                        </div>
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="day2" class="accordion-collapse collapse" aria-labelledby="day2Heading"
+                                 data-bs-parent="#itineraryAccordion">
+                                <div class="accordion-body">
+                                    <p>Morning drive to Tarangire National Park for a full-day game drive. Experience the large elephant herds and iconic baobab trees.</p>
+                                    <div class="day-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-bed text-primary"></i>
+                                            <span>Lodge in Tarangire</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-utensils text-primary"></i>
+                                            <span>All Meals Included</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-binoculars text-primary"></i>
+                                            <span>Game Drives</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="day3Heading">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#day3" aria-expanded="false" aria-controls="day3">
+                                    <div class="day-header">
+                                        <div class="day-number">
+                                            <span>3</span>
+                                        </div>
+                                        <div class="day-title">
+                                            <h4 class="mb-0">Serengeti National Park</h4>
+                                            <p class="text-muted mb-0">Endless Plains</p>
+                                        </div>
+                                        <div class="day-icon">
+                                            <i class="fas fa-lion"></i>
+                                        </div>
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="day3" class="accordion-collapse collapse" aria-labelledby="day3Heading"
+                                 data-bs-parent="#itineraryAccordion">
+                                <div class="accordion-body">
+                                    <p>Drive through the scenic highlands and enter Serengeti. Enjoy an afternoon game drive en route to your lodge.</p>
+                                    <div class="day-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-bed text-primary"></i>
+                                            <span>Serengeti Lodge</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-utensils text-primary"></i>
+                                            <span>All Meals Included</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-car text-primary"></i>
+                                            <span>Scenic Drive</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="day4Heading">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#day4" aria-expanded="false" aria-controls="day4">
+                                    <div class="day-header">
+                                        <div class="day-number">
+                                            <span>4</span>
+                                        </div>
+                                        <div class="day-title">
+                                            <h4 class="mb-0">Serengeti Exploration</h4>
+                                            <p class="text-muted mb-0">Wildlife Adventure</p>
+                                        </div>
+                                        <div class="day-icon">
+                                            <i class="fas fa-camera"></i>
+                                        </div>
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="day4" class="accordion-collapse collapse" aria-labelledby="day4Heading"
+                                 data-bs-parent="#itineraryAccordion">
+                                <div class="accordion-body">
+                                    <p>Full day exploring the vast Serengeti plains. Morning and afternoon game drives to spot the Big Five and witness the great migration (seasonal).</p>
+                                    <div class="day-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-bed text-primary"></i>
+                                            <span>Serengeti Lodge</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-utensils text-primary"></i>
+                                            <span>All Meals Included</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-binoculars text-primary"></i>
+                                            <span>Full Day Game Drive</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="col-lg-3">
-                <h4 class="mb-4">Related Safaris</h4>
-                <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action mb-3">
-                        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80" 
-                             class="img-fluid rounded mb-2" style="width:100%; height:140px; object-fit:cover;">
-                        Serengeti Great Migration Safari
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action mb-3">
-                        <img src="https://images.unsplash.com/photo-1549887534-4a24f7c5a4c9?auto=format&fit=crop&w=400&q=80" 
-                             class="img-fluid rounded mb-2" style="width:100%; height:140px; object-fit:cover;">
-                        Ngorongoro Crater Adventure
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                        <img src="https://images.unsplash.com/photo-1571205972635-7a00dc2a69c2?auto=format&fit=crop&w=400&q=80" 
-                             class="img-fluid rounded mb-2" style="width:100%; height:140px; object-fit:cover;">
-                        Zanzibar Beach Extension
-                    </a>
+                <h4 class="quotation-heading fw-bold">
+                    <span class="quotation-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </span>
+                    Get Quotation
+                </h4>
+
+                <form class="p-3 border rounded shadow-sm" style="background: var(--light);">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold" for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold" for="email">E-Mail</label>
+                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold" for="phone">Phone</label>
+                        <input type="text" class="form-control" id="phone" placeholder="Phone">
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label class="form-label fw-bold" for="adults">No. Adults</label>
+                            <select id="adults" class="form-select">
+                                <option>1</option><option>2</option><option>3</option><option>4+</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <label class="form-label fw-bold" for="children">No. Children</label>
+                            <select id="children" class="form-select">
+                                <option>0</option><option>1</option><option>2</option><option>3+</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold" for="arrival">Date of Arrival</label>
+                        <input type="date" class="form-control" id="arrival">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold" for="message">Description</label>
+                        <textarea id="message" class="form-control" rows="3" placeholder="Message"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn w-100 text-white fw-bold"
+                            style="background: var(--primary);">
+                        Get a Quote
+                    </button>
+                </form>
+
+                <div class="d-flex align-items-center border mt-4 p-3 bg-light rounded">
+                    <span class="me-2" style="font-size: 1.5rem; color: var(--primary);">
+                        <i class="bi bi-telephone-fill"></i>
+                    </span>
+                    <div>
+                        <strong>Contact Us</strong><br>
+                        <span>+255 788 822 792</span>
+                    </div>
                 </div>
             </div>
         </div>

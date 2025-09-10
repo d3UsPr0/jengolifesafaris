@@ -216,6 +216,181 @@
         font-size: 1.2rem; /* reduce font size */
     }
 }
+
+
+.custom-accordion {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.custom-accordion .accordion-item {
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    background: white;
+}
+
+.custom-accordion .accordion-item:last-child {
+    border-bottom: none;
+}
+
+.custom-accordion .accordion-button {
+    background: linear-gradient(to right, rgba(243, 156, 18, 0.1), rgba(243, 156, 18, 0.05));
+    padding: 20px;
+    border: none;
+    box-shadow: none;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    background: linear-gradient(to right, rgba(243, 156, 18, 0.15), rgba(243, 156, 18, 0.1));
+    color: inherit;
+    box-shadow: none;
+}
+
+.custom-accordion .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23F39C12'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    transform: scale(1.2);
+}
+
+.custom-accordion .accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23F39C12'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.day-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.day-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.day-number span {
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.day-title {
+    flex-grow: 1;
+}
+
+.day-title h4 {
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.day-title p {
+    font-size: 0.9rem;
+}
+
+.day-icon {
+    font-size: 1.3rem;
+    color: var(--secondary);
+    margin-left: 15px;
+    margin-right: 10px;
+}
+
+.accordion-body {
+    padding: 20px;
+    background: #fafafa;
+}
+
+.accordion-body p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.day-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #eee;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.detail-item i {
+    font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .day-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .day-number {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .day-icon {
+        margin-left: 0;
+        margin-top: 10px;
+        margin-right: 0;
+    }
+    
+    .day-details {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    
+    
+    .detail-item {
+        justify-content: center;
+    }
+    
+    .accordion-button {
+        padding: 15px;
+    }
+}
+
+.quotation-heading {
+    color: var(--secondary, #F39C12) !important;
+    /* font-weight: 500 !important; */
+    position: relative !important;
+    padding-bottom: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+.quotation-icon {
+    background: var(--secondary, #F39C12) !important;
+    color: white !important;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 8px rgba(243, 156, 18, 0.3) !important;
+    flex-shrink: 0 !important;
+    font-size: 1.2rem;
+}
+
 .list-unstyled i {
     width: 20px;
     text-align: center;
