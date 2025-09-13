@@ -38,8 +38,44 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_ckeditor_5',
     'web.apps.WebConfig',
 ]
+
+# CKEditor 5 Config
+CKEDITOR_5_CONFIGS = {
+    'default': {
+        'toolbar': [
+            'heading', '|',
+            'bold', 'italic', 'underline', 'strikethrough', 'link', '|',
+            'bulletedList', 'numberedList', 'outdent', 'indent', '|',
+            'alignment', 'blockQuote', 'codeBlock', '|',
+            'imageUpload', 'insertTable', 'mediaEmbed', '|',
+            'undo', 'redo'
+        ],
+        'image': {
+            'toolbar': ['imageTextAlternative', 'imageStyle:full', 'imageStyle:side']
+        },
+          'link': {
+            'addTargetToExternalLinks': True,  # Auto-add target="_blank" to external links
+            'decorators': [
+                {
+                    'mode': 'manual',
+                    'label': 'Open in new tab',
+                    'attributes': {
+                        'target': '_blank',
+                        'rel': 'noopener noreferrer',  # Security best practice
+                    }
+                }
+            ]
+        },
+        'table': {
+            'contentToolbar': ['tableColumn', 'tableRow', 'mergeTableCells']
+        },
+        
+        'language': 'en'
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -117,7 +153,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # optional global static folder
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
