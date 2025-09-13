@@ -5,13 +5,18 @@ from django.contrib.auth.models import User
 
 class Destination(models.Model):
     name = models.CharField(max_length=100)
-    slug = models.SlugField(unique=True)
-    description = CKEditor5Field(config_name='default')
+    slug = models.SlugField(unique=True, blank=True)  # allow auto-fill
+    description = models.TextField()
     image = models.ImageField(upload_to='destinations/')
     best_time_to_visit = models.CharField(max_length=200)
     wildlife = models.TextField(help_text="Common wildlife sightings")
     is_popular = models.BooleanField(default=False)
-    
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)  # spaces → hyphens
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return self.name
 

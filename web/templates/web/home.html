@@ -55,7 +55,7 @@
         </div>
     </section>
 
-    <!-- Safari Packages -->
+    <!-- Destinations Section -->
     <section id="destinations" class="bg-light ">
             <div class="container-fluid">
                 <div class="text-center">
@@ -73,118 +73,38 @@
                 <i class="fas fa-chevron-left"></i>
             </button>
             
-            <!-- Safari Packages Container -->
+            <!-- Destinations Container -->
             <div class="safari-packages-container">
-                <div class="safari-packages-scroll">
-                    <!-- Card 1 -->
-                    <div class="safari-package-card">
-                        <div class="package-image-container">
-                            <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Serengeti Migration">
-                            <div class="package-title-overlay">
-                                <h5>Serengeti Migration</h5>
-                            </div>
-                        </div>
-                        <div class="package-details">
-                            <p>Experience the breathtaking wildlife migration in the Serengeti, where millions of animals traverse the plains in search of greener pastures.</p>
-                            <div class="text-center">
-                                <a href="{% url 'safari' %}" class="btn btn-outline-primary btn-sm">
-                                    View Safaris <i class="fas fa-arrow-right ms-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 2 -->
-                    <div class="safari-package-card">
-                        <div class="package-image-container">
-                            <img src="https://images.unsplash.com/photo-1551085254-e96b210db58a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Maasai Mara Adventure">
-                            <div class="package-title-overlay">
-                                <h5>Maasai Mara Adventure</h5>
-                            </div>
-                        </div>
-                        <div class="package-details">
-                            <p>Experience the breathtaking wildlife migration in the Serengeti, where millions of animals traverse the plains in search of greener pastures.</p>
-                            <div class="text-center">
-                                <a href="{% url 'safari' %}" class="btn btn-outline-primary btn-sm">
-                                    View Safaris <i class="fas fa-arrow-right ms-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 3 -->
-                    <div class="safari-package-card">
-                        <div class="package-image-container">
-                            <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gorilla Trekking">
-                            <div class="package-title-overlay">
-                                <h5>Gorilla Trekking</h5>
-                            </div>
-                        </div>
-                        <div class="package-details">
-                            <p>Experience the breathtaking wildlife migration in the Serengeti, where millions of animals traverse the plains in search of greener pastures.</p>
-                            <div class="text-center">
-                                <a href="{% url 'safari' %}" class="btn btn-outline-primary btn-sm">
-                                    View Safaris <i class="fas fa-arrow-right ms-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 4 -->
-                    <div class="safari-package-card">
-                        <div class="package-image-container">
-                            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Lion Safari">
-                            <div class="package-title-overlay">
-                                <h5>Lion King Safari</h5>
-                            </div>
-                        </div>
-                        <div class="package-details">
-                            <p>Experience the breathtaking wildlife migration in the Serengeti, where millions of animals traverse the plains in search of greener pastures.</p>
-                            <div class="text-center">
-                                <a href="{% url 'safari' %}" class="btn btn-outline-primary btn-sm">
-                                    View Safaris <i class="fas fa-arrow-right ms-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 5 -->
-                    <div class="safari-package-card">
-                        <div class="package-image-container">
-                            <img src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Elephant Safari">
-                            <div class="package-title-overlay">
-                                <h5>Elephant Wilderness</h5>
-                            </div>
-                        </div>
-                        <div class="package-details">
-                            <p>Experience the breathtaking wildlife migration in the Serengeti, where millions of animals traverse the plains in search of greener pastures.</p>
-                            <div class="text-center">
-                                <a href="{% url 'safari' %}" class="btn btn-outline-primary btn-sm">
-                                    View Safaris <i class="fas fa-arrow-right ms-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 6 -->
-                    <div class="safari-package-card">
-                        <div class="package-image-container">
-                            <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Big Five Safari">
-                            <div class="package-title-overlay">
-                                <h5>Big Five Safari</h5>
-                            </div>
-                        </div>
-                        <div class="package-details">
-                            <p>Experience the breathtaking wildlife migration in the Serengeti, where millions of animals traverse the plains in search of greener pastures.</p>
-                            <div class="text-center">
-                                <a href="{% url 'safari' %}" class="btn btn-outline-primary btn-sm">
-                                    View Safaris <i class="fas fa-arrow-right ms-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+        <div class="safari-packages-scroll">
+        {% for destination in destinations %}
+        <!-- Dynamic Card for each Destination -->
+        <div class="safari-package-card">
+            <div class="package-image-container">
+                {% if destination.image %}
+                    <img src="{{ destination.image.url }}" alt="{{ destination.name }}">
+                {% else %}
+                    <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="{{ destination.name }}">
+                {% endif %}
+                <div class="package-title-overlay">
+                    <h5>{{ destination.name }}</h5>
                 </div>
             </div>
+            <div class="package-details">
+                <p>{{ destination.description|truncatewords:30 }}</p>
+                <div class="text-center">
+                    <a href="{% url 'destination' destination.slug %}" 
+                    class="btn btn-outline-primary btn-sm">View details <i class="fas fa-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <!-- Fallback content if no destinations exist -->
+        <div class="col-12 text-center">
+            <p class="text-muted">No destinations available at the moment.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
             
             <!-- Right Navigation Button -->
             <button class="carousel-btn carousel-btn-right me-2" aria-label="Next packages">
@@ -195,6 +115,7 @@
         </div>
     </section>
 
+    <!-- Safari Packages -->
     <section id="safaris" class="bg-light">
             <div class="container-fluid">
                 <div class="text-center">
@@ -203,7 +124,7 @@
                     <!-- flex wrapper for paragraph + button -->
                     <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
                     <p class="lead mb-0">Discover our most sought-after safari experiences</p>
-                    <a href="#" class="btn btn-light rounded-pill shadow-sm px-4 py-2 text-primary btn-all">View all popular packages <i class="bi bi-arrow-up-right ms-2"></i></a>
+                    <a href="#" class="btn btn-light rounded-pill shadow-sm px-4 py-2 text-primary btn-all">View all Safari packages <i class="bi bi-arrow-up-right ms-2"></i></a>
                 </div>
             </div>
         
@@ -232,7 +153,7 @@
                             </ul>
                             <div class="text-center">
                                 <a href="{% url 'safari' %}" class="btn btn-outline-primary btn-sm">
-                                    View details <i class="fas fa-arrow-right ms-1"></i>
+                                    View Safari <i class="fas fa-arrow-right ms-1"></i>
                                 </a>
                             </div>
                         </div>
@@ -254,7 +175,7 @@
                             </ul>
                             <div class="text-center">
                                 <a href="#" class="btn btn-outline-primary btn-sm">
-                                    View details <i class="fas fa-arrow-right ms-1"></i>
+                                    View Safari <i class="fas fa-arrow-right ms-1"></i>
                                 </a>
                             </div>
                         </div>
@@ -276,7 +197,7 @@
                             </ul>
                             <div class="text-center">
                                 <a href="#" class="btn btn-outline-primary btn-sm">
-                                    View details <i class="fas fa-arrow-right ms-1"></i>
+                                    View Safari <i class="fas fa-arrow-right ms-1"></i>
                                 </a>
                             </div>
                         </div>
@@ -298,7 +219,7 @@
                             </ul>
                             <div class="text-center">
                                 <a href="#" class="btn btn-outline-primary btn-sm">
-                                    View details <i class="fas fa-arrow-right ms-1"></i>
+                                    View Safari <i class="fas fa-arrow-right ms-1"></i>
                                 </a>
                             </div>
                         </div>
@@ -320,7 +241,7 @@
                             </ul>
                             <div class="text-center">
                                 <a href="#" class="btn btn-outline-primary btn-sm">
-                                    View details <i class="fas fa-arrow-right ms-1"></i>
+                                    View Safari <i class="fas fa-arrow-right ms-1"></i>
                                 </a>
                             </div>
                         </div>
@@ -342,7 +263,7 @@
                             </ul>
                             <div class="text-center">
                                 <a href="#" class="btn btn-outline-primary btn-sm">
-                                    View details <i class="fas fa-arrow-right ms-1"></i>
+                                    View Safari <i class="fas fa-arrow-right ms-1"></i>
                                 </a>
                             </div>
                         </div>
