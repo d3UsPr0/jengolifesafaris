@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 from django_ckeditor_5.fields import CKEditor5Field
 from django.utils.text import slugify
 from django.contrib.auth.models import User
@@ -121,6 +122,56 @@ class Inquiry(models.Model):
     
     def __str__(self):
         return f"Inquiry from {self.name} - {self.created_at}"
+
+class Testimonial(models.Model):
+    RATING_CHOICES = (
+        (1, '1 Star'),
+        (2, '2 Stars'),
+        (3, '3 Stars'),
+        (4, '4 Stars'),
+        (5, '5 Stars'),
+    )
+    
+    client_name = models.CharField(max_length=100)
+    country = models.CharField(max_length=100)
+    photo = models.ImageField(upload_to='testimonials/', blank=True, null=True)
+    testimonial_text = models.TextField(
+        help_text="Please keep your testimonial under 50 words."
+    )
+    rating = models.IntegerField(choices=RATING_CHOICES)
+    safari_package = models.ForeignKey("SafariPackage", on_delete=models.SET_NULL, null=True, blank=True)
+    is_featured = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def clean(self):
+        words = self.testimonial_text.split()
+        if len(words) > 50:
+            raise ValidationError({
+                'testimonial_text': f"Your testimonial has {len(words)} words. The maximum allowed is 50."
+            })
+
+    def __str__(self):
+        return f"{self.client_name} - {self.rating} Stars"
+    RATING_CHOICES = (
+        (1, '1 Star'),
+        (2, '2 Stars'),
+        (3, '3 Stars'),
+        (4, '4 Stars'),
+        (5, '5 Stars'),
+    )
+    
+    client_name = models.CharField(max_length=100)
+    country = models.CharField(max_length=100)
+    photo = models.ImageField(upload_to='testimonials/', blank=True, null=True)
+    testimonial_text = models.TextField()
+    rating = models.IntegerField(choices=RATING_CHOICES)
+    safari_package = models.ForeignKey(SafariPackage, on_delete=models.SET_NULL, null=True, blank=True)
+    is_featured = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return f"{self.client_name} - {self.rating} Stars"
+
 
 class FAQ(models.Model):
     question = models.CharField(max_length=200)

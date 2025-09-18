@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import (
     Destination, SafariPackage, ItineraryDay, BlogPost,
     Inquiry, FAQ, GalleryImage, SiteSetting,
-    Subscriber, TeamMember
+    Subscriber, TeamMember, Testimonial
 )
 
 
@@ -70,6 +70,11 @@ class SiteSettingAdmin(admin.ModelAdmin):
     list_display = ("site_name", "contact_email", "contact_phone")
     search_fields = ("site_name", "contact_email", "contact_phone")
 
+@admin.register(Testimonial)
+class TestimonialAdmin(admin.ModelAdmin):
+    list_display = ("client_name", "country", "rating", "safari_package", "is_featured", "created_at")
+    list_filter = ("rating", "is_featured", "safari_package")
+    search_fields = ("client_name", "country", "testimonial_text")
 
 @admin.register(Subscriber)
 class SubscriberAdmin(admin.ModelAdmin):

@@ -12,7 +12,7 @@
                 <p>With deep connections across East Africa, we offer access to pristine wilderness areas and unique experiences that go beyond the ordinary safari.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 
-                <a href="{% url 'about' %}" class="btn btn-light shadow-sm text-primary fw-bold btn-all">Read more <i class="bi bi-arrow-up-right ms-2"></i></a></p>
+                <a href="{% url 'about' %}" class="btn btn-light shadow-sm text-primary btn-all">Read more <i class="bi bi-arrow-up-right ms-2"></i></a></p>
                 <div class="row mt-4">
                 </div>
             </div>
@@ -115,19 +115,21 @@
         </div>
     </section>
 
-    <!-- Safari Packages -->
-    <section id="safaris" class="bg-light">
-            <div class="container-fluid">
-                <div class="text-center">
-                    <h2 class="section-title d-inline-block">Popular Safari Packages</h2>
-            
-                    <!-- flex wrapper for paragraph + button -->
-                    <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
-                    <p class="lead mb-0">Discover our most sought-after safari experiences</p>
-                    <a href="#" class="btn btn-light rounded-pill shadow-sm px-4 py-2 text-primary btn-all">View all Safari packages <i class="bi bi-arrow-up-right ms-2"></i></a>
-                </div>
+<!-- Safari Packages Section -->
+<section id="safaris" class="bg-light">
+    <div class="container-fluid">
+        <div class="text-center">
+            <h2 class="section-title d-inline-block">Popular Safari Packages</h2>
+    
+            <!-- flex wrapper for paragraph + button -->
+            <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
+                <p class="lead mb-0">Discover our most sought-after safari experiences</p>
+                <a href="{% url 'safaris' %}" class="btn btn-light rounded-pill shadow-sm px-4 py-2 text-primary btn-all">
+                    View all Safari packages <i class="bi bi-arrow-up-right ms-2"></i>
+                </a>
             </div>
-        
+        </div>
+    
         <div class="position-relative">
             <!-- Left Navigation Button -->
             <button class="carousel-btn carousel-btn-left ms-2" aria-label="Previous packages">
@@ -137,137 +139,45 @@
             <!-- Safari Packages Container -->
             <div class="safari-packages-container">
                 <div class="safari-packages-scroll">
-                    <!-- Card 1 -->
+                    {% for package in safari_packages %}
+                    <!-- Dynamic Card for each Safari Package -->
                     <div class="safari-package-card">
                         <div class="package-image-container">
-                            <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Serengeti Migration">
+                            {% if package.featured_image %}
+                                <img src="{{ package.featured_image.url }}" alt="{{ package.title }}">
+                            {% else %}
+                                <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="{{ package.title }}">
+                            {% endif %}
                             <div class="package-title-overlay">
-                                <h5>Serengeti Migration</h5>
+                                <h5>{{ package.title }}</h5>
                             </div>
                         </div>
                         <div class="package-details">
                             <ul class="list-unstyled">
-                                <li class="mb-1"><i class="fas fa-calendar-alt text-secondary me-2"></i> 7 Days / 6 Nights</li>
-                                <li class="mb-1"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Tanzania</li>
-                                <li class="mb-1"><i class="fas fa-users text-secondary me-2"></i> Max 6 People</li>
+                                <li class="mb-1"><i class="fas fa-calendar-alt text-secondary me-2"></i> {{ package.duration_days }} Days / {{ package.duration_nights }} Nights</li>
+                                <li class="mb-1"><i class="fas fa-map-marker-alt text-secondary me-2"></i> 
+                                    {% for destination in package.destinations.all %}
+                                        {{ destination.name }}{% if not forloop.last %}, {% endif %}
+                                    {% empty %}
+                                        Multiple Destinations
+                                    {% endfor %}
+                                </li>
+                                <li class="mb-1"><i class="fas fa-users text-secondary me-2"></i> Max {{ package.max_people }} People</li>
+                                <li class="mb-1"><i class="fas fa-tag text-secondary me-2"></i> ${{ package.price_per_person }} per person</li>
                             </ul>
                             <div class="text-center">
-                                <a href="{% url 'safari' %}" class="btn btn-outline-primary btn-sm">
+                                <a href="{% url 'safari' package.slug %}" class="btn btn-outline-primary btn-sm">
                                     View Safari <i class="fas fa-arrow-right ms-1"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Card 2 -->
-                    <div class="safari-package-card">
-                        <div class="package-image-container">
-                            <img src="https://images.unsplash.com/photo-1551085254-e96b210db58a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Maasai Mara Adventure">
-                            <div class="package-title-overlay">
-                                <h5>Maasai Mara Adventure</h5>
-                            </div>
-                        </div>
-                        <div class="package-details">
-                            <ul class="list-unstyled">
-                                <li class="mb-1"><i class="fas fa-calendar-alt text-secondary me-2"></i> 6 Days / 5 Nights</li>
-                                <li class="mb-1"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Kenya</li>
-                                <li class="mb-1"><i class="fas fa-users text-secondary me-2"></i> Max 8 People</li>
-                            </ul>
-                            <div class="text-center">
-                                <a href="#" class="btn btn-outline-primary btn-sm">
-                                    View Safari <i class="fas fa-arrow-right ms-1"></i>
-                                </a>
-                            </div>
-                        </div>
+                    {% empty %}
+                    <!-- Fallback if no safari packages -->
+                    <div class="col-12 text-center">
+                        <p class="text-muted">No safari packages available at the moment.</p>
                     </div>
-                    
-                    <!-- Card 3 -->
-                    <div class="safari-package-card">
-                        <div class="package-image-container">
-                            <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gorilla Trekking">
-                            <div class="package-title-overlay">
-                                <h5>Gorilla Trekking</h5>
-                            </div>
-                        </div>
-                        <div class="package-details">
-                            <ul class="list-unstyled">
-                                <li class="mb-1"><i class="fas fa-calendar-alt text-secondary me-2"></i> 5 Days / 4 Nights</li>
-                                <li class="mb-1"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Rwanda</li>
-                                <li class="mb-1"><i class="fas fa-users text-secondary me-2"></i> Max 4 People</li>
-                            </ul>
-                            <div class="text-center">
-                                <a href="#" class="btn btn-outline-primary btn-sm">
-                                    View Safari <i class="fas fa-arrow-right ms-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 4 -->
-                    <div class="safari-package-card">
-                        <div class="package-image-container">
-                            <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Lion Safari">
-                            <div class="package-title-overlay">
-                                <h5>Lion King Safari</h5>
-                            </div>
-                        </div>
-                        <div class="package-details">
-                            <ul class="list-unstyled">
-                                <li class="mb-1"><i class="fas fa-calendar-alt text-secondary me-2"></i> 5 Days / 4 Nights</li>
-                                <li class="mb-1"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Serengeti</li>
-                                <li class="mb-1"><i class="fas fa-users text-secondary me-2"></i> Max 7 People</li>
-                            </ul>
-                            <div class="text-center">
-                                <a href="#" class="btn btn-outline-primary btn-sm">
-                                    View Safari <i class="fas fa-arrow-right ms-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 5 -->
-                    <div class="safari-package-card">
-                        <div class="package-image-container">
-                            <img src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Elephant Safari">
-                            <div class="package-title-overlay">
-                                <h5>Elephant Wilderness</h5>
-                            </div>
-                        </div>
-                        <div class="package-details">
-                            <ul class="list-unstyled">
-                                <li class="mb-1"><i class="fas fa-calendar-alt text-secondary me-2"></i> 6 Days / 5 Nights</li>
-                                <li class="mb-1"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Amboseli</li>
-                                <li class="mb-1"><i class="fas fa-users text-secondary me-2"></i> Max 6 People</li>
-                            </ul>
-                            <div class="text-center">
-                                <a href="#" class="btn btn-outline-primary btn-sm">
-                                    View Safari <i class="fas fa-arrow-right ms-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 6 -->
-                    <div class="safari-package-card">
-                        <div class="package-image-container">
-                            <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Big Five Safari">
-                            <div class="package-title-overlay">
-                                <h5>Big Five Safari</h5>
-                            </div>
-                        </div>
-                        <div class="package-details">
-                            <ul class="list-unstyled">
-                                <li class="mb-1"><i class="fas fa-calendar-alt text-secondary me-2"></i> 8 Days / 7 Nights</li>
-                                <li class="mb-1"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Kruger Park</li>
-                                <li class="mb-1"><i class="fas fa-users text-secondary me-2"></i> Max 8 People</li>
-                            </ul>
-                            <div class="text-center">
-                                <a href="#" class="btn btn-outline-primary btn-sm">
-                                    View Safari <i class="fas fa-arrow-right ms-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
             
@@ -276,8 +186,8 @@
                 <i class="fas fa-chevron-right"></i>
             </button>
         </div>
-        </div>
-    </section>
+    </div>
+</section>
 
     <!-- Plan section for budget -->
     <section class="plan d-flex align-items-center text-center text-white py-5 section-spacing reduce-mobile">
@@ -351,73 +261,48 @@
     </section>
 
     <!-- Testimonials -->
-    <section id="testimonials" class="">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-title d-inline-block">What Our Travelers Say</h2>
-                <p class="lead">Authentic experiences from our guests</p>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="testimonial-card">
-                        <div class="d-flex align-items-center mb-4">
-                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Client" class="testimonial-img">
-                            <div>
-                                <h5 class="mb-0">Sarah Johnson</h5>
-                                <p class="text-muted mb-0">United States</p>
-                            </div>
-                        </div>
-                        <p class="testimonial-text">"Our safari with Jengo Life exceeded all expectations. The guides were knowledgeable, the accommodations luxurious, and the wildlife viewing spectacular. We'll cherish these memories forever."</p>
-                        <div class="text-secondary">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="testimonial-card">
-                        <div class="d-flex align-items-center mb-4">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="testimonial-img">
-                            <div>
-                                <h5 class="mb-0">David Müller</h5>
-                                <p class="text-muted mb-0">Germany</p>
-                            </div>
-                        </div>
-                        <p class="testimonial-text">"The attention to detail was remarkable. From the moment we arrived, every aspect of our trip was perfectly organized. The gorilla trekking experience was truly a once-in-a-lifetime adventure."</p>
-                        <div class="text-secondary">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="testimonial-card">
-                        <div class="d-flex align-items-center mb-4">
-                            <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Client" class="testimonial-img">
-                            <div>
-                                <h5 class="mb-0">Emma Thompson</h5>
-                                <p class="text-muted mb-0">Australia</p>
-                            </div>
-                        </div>
-                        <p class="testimonial-text">"Jengo Life Safaris provided the perfect balance of adventure and relaxation. The cultural interactions with local communities were as highlight as the wildlife sightings. Highly recommended!"</p>
-                        <div class="text-secondary">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<section id="testimonials" class="">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-title d-inline-block">What Our Travelers Say</h2>
+            <p class="lead">Authentic experiences from our guests</p>
         </div>
-    </section>
+        <div class="row">
+            {% for testimonial in testimonials %}
+            <div class="col-lg-4 mb-4">
+                <div class="testimonial-card">
+                    <div class="d-flex align-items-center mb-4">
+                        {% if testimonial.photo %}
+                            <img src="{{ testimonial.photo.url }}" alt="{{ testimonial.client_name }}" class="testimonial-img">
+                        {% else %}
+                            <!-- Fallback image if no photo is uploaded -->
+                            <img src="https://via.placeholder.com/60x60" alt="{{ testimonial.client_name }}" class="testimonial-img">
+                        {% endif %}
+                        <div>
+                            <h5 class="mb-0">{{ testimonial.client_name }}</h5>
+                            <p class="text-muted mb-0">{{ testimonial.country }}</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"{{ testimonial.testimonial_text }}"</p>
+                    <div class="text-secondary">
+                        {% for i in "12345" %}
+                            {% if forloop.counter <= testimonial.rating %}
+                                <i class="fas fa-star"></i>
+                            {% else %}
+                                <i class="far fa-star"></i>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center">
+                <p>No testimonials available yet.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
      <!-- Contact Section -->
     <section id="contact" class="py-5 bg-light section-spacing reduce-mobile">
@@ -482,88 +367,109 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="py-5 bg-light section-spacing reduce-mobile">
-        <div class="container">
-            <div class="text-center mb-3">
-                <h2 class="section-title d-inline-block">Frequently Asked Questions</h2>
-                <p class="lead">Let's answer some of the most popular travel questions.</p>
+   <!-- FAQ Section -->
+<section id="faq" class="py-5 bg-light section-spacing reduce-mobile">
+    <div class="container">
+        <div class="text-center mb-3">
+            <h2 class="section-title d-inline-block">Frequently Asked Questions</h2>
+            <p class="lead">Let's answer some of the most popular travel questions.</p>
+        </div>
+
+        <div class="accordion" id="faqAccordion">
+            {% for faq in faqs %}
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+                    <button class="accordion-button collapsed bg-success text-white" type="button" 
+                            data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}">
+                        {{ faq.question }}
+                    </button>
+                </h2>
+                <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse" 
+                     data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        {{ faq.answer }}
+                    </div>
+                </div>
+               
             </div>
-
-            <div class="accordion" id="faqAccordion">
-                <!-- Q1 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button collapsed bg-success text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                            Is it safe to travel to Tanzania?
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Tanzania is generally safe for travelers, especially in popular safari and tourist regions. Like anywhere, it's wise to remain aware of your surroundings and follow travel advisories.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Q2 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed bg-success text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                            Which vaccinations are recommended for Tanzania?
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Commonly recommended vaccines include Yellow Fever, Typhoid, Hepatitis A/B, and routine vaccines. Check with your doctor for updated advice.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Q3 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed bg-success text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                            Is food and water safe in Tanzania?
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Stick to bottled or filtered water. Most safari lodges and hotels offer safe meals prepared with hygiene standards in mind.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Q4 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFour">
-                        <button class="accordion-button collapsed bg-success text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
-                            What happens if I get sick or injured on safari?
-                        </button>
-                    </h2>
-                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Safari operators are trained to handle emergencies. Medical evacuation and travel insurance are strongly recommended.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Q5 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFive">
-                        <button class="accordion-button collapsed bg-success text-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
-                            What are the VISA requirements for Traveling to Tanzania?
-                        </button>
-                    </h2>
-                    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Most visitors can obtain a visa on arrival or apply online for an eVisa. Requirements vary by nationality.
-                        </div>
-                    </div>
-                </div>
+            {% empty %}
+            <div class="alert alert-info">
+                No FAQs available at the moment.
             </div>
-            <div class="text-center mt-4">
-                <a href="#" class="btn btn-outline-primary">View all FAQs</a>
+            {% endfor %}
+        </div>
+        
+        <div class="text-center mt-4">
+            <a href="#" class="btn btn-outline-primary">View all FAQs</a>
+        </div>
+    </div>
+</section>
+
+ <!-- Latest Articles Section -->
+<section class="latest-articles py-5 bg-light section-spacing reduce-mobile">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col text-center">
+                <h2 class="section-title d-inline-block">Latest Articles</h2>
+                <p class="lead">Discover helpful tips, wildlife insights and safari experiences from our experts</p>
             </div>
         </div>
-    </section>
-    {% endblock %}
+        
+        <div class="row g-4">
+            {% for article in articles %}
+            <div class="col-md-6 col-lg-4">
+                <div class="article-card card h-100 border-0 shadow-sm">
+                    <div class="position-relative">
+                        <img src="{{ article.featured_image.url }}" 
+                             class="card-img-top" alt="{{ article.title }}">
+                        <div class="article-badge position-absolute top-0 end-0 
+                                    {% if article.category == 'wildlife' %}bg-primary
+                                    {% elif article.category == 'tips' %}bg-success
+                                    {% elif article.category == 'birding' %}bg-warning text-dark
+                                    {% elif article.category == 'culture' %}bg-info
+                                    {% elif article.category == 'conservation' %}bg-danger
+                                    {% else %}bg-secondary{% endif %} 
+                                    text-white px-3 py-2 m-3 rounded">
+                            {{ article.get_category_display }}
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <small class="text-muted">
+                                <i class="far fa-calendar me-2"></i>{{ article.published_date|date:"F j, Y" }}
+                            </small>
+                            <small class="text-muted ms-3">
+                                <i class="far fa-clock me-2"></i>{{ article.read_time }} min read
+                            </small>
+                        </div>
+                        <h6 class="card-title fw-bold">{{ article.title }}</h6>
+                        <p class="card-text">{{ article.excerpt }}</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pt-0">
+                        <a href="{% url 'article' article.slug %}" class="btn btn-link text-primary p-0 text-decoration-none">
+                            Read More <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center">
+                <div class="alert alert-info">
+                    No articles available at the moment.
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        {% if articles %}
+        <div class="row mt-5">
+            <div class="col text-center">
+                <a href="{% url 'blog' %}" class="btn btn-outline-primary">
+                   View all articles
+                </a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
