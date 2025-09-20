@@ -114,9 +114,9 @@ def submit_quotation(request):
             
             # Get recipient emails from settings
             recipient_emails = [
-                'deuc60@gmail.com',  # Use direct email for testing
-                'pendomarwa22@gmail.com'   # Use direct email for testing
-            ]
+    getattr(settings, 'CONTACT_EMAIL1', 'info@jengolifesafaris.com'),
+    getattr(settings, 'CONTACT_EMAIL2', 'daudingusa1@gmail.com'),
+]
             
             print("Attempting to send email to:", recipient_emails)  # Debug print
             
