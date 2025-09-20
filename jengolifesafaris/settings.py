@@ -99,6 +99,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
+                # Custom context processors
+                'web.context_processors.global_context',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -166,3 +170,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Or your SMTP server
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'deuc60@gmail.com'  # Your email
+EMAIL_HOST_PASSWORD = 'vumj ssmj ktaa qmmo'  # Your app password
+
+# Custom settings for your site
+CONTACT_EMAIL1 = 'deuc60@gmail.com'
+CONTACT_EMAIL2 = 'daudingusa1@gmail.com'
+SITE_NAME = 'Jengo Life Safaris'

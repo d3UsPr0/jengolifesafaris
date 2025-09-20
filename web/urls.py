@@ -11,5 +11,8 @@ urlpatterns = [
     path('safari/<slug:slug>/', views.safari, name='safari'),
     path('blog/', views.articles, name='blog'),
     path('blog/<slug:slug>/', views.article, name='article'),
+    path('book/', views.booking, name='book'),
+    path('submit-quotation/', views.submit_quotation, name='submit_quotation'),
+    path('test-email/', views.test_email, name='test_email'),
     
 ]

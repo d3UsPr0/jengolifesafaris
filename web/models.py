@@ -207,20 +207,29 @@ class GalleryImage(models.Model):
         return self.title
 
 class SiteSetting(models.Model):
-    site_name = models.CharField(max_length=100, default="Jengo Life Safaris")
-    contact_email = models.EmailField(default="info@jengolifesafaris.com")
-    contact_phone = models.CharField(max_length=20, default="+255 788 822 792")
-    address = models.TextField(default="123 Safari Road, Arusha, Tanzania")
-    office_hours = models.TextField(default="Monday - Friday: 8:00 AM - 6:00 PM\nSaturday: 9:00 AM - 4:00 PM\nSunday: Closed")
+    site_name = models.CharField(max_length=100)
+    contact_email = models.EmailField()
+    contact_phone = models.CharField(max_length=20)
+    address = models.TextField()
+    office_hours = models.TextField()
+
+    # Social links
     facebook_url = models.URLField(blank=True)
     twitter_url = models.URLField(blank=True)
     instagram_url = models.URLField(blank=True)
     linkedin_url = models.URLField(blank=True)
+
+    # Rich text
     about_us = CKEditor5Field(config_name='default', blank=True)
     terms_conditions = CKEditor5Field(config_name='default', blank=True)
     privacy_policy = CKEditor5Field(config_name='default', blank=True)
 
-    
+    # Image fields (max 4)
+    image1 = models.ImageField(upload_to='about_images/', blank=False, null=False, default='about_images/waldemar-brandt-zQsCISvBY2E-unsplash_Etj3Deb.jpg')
+    image2 = models.ImageField(upload_to='about_images/', blank=False, null=False, default='about_images/waldemar-brandt-zQsCISvBY2E-unsplash_Etj3Deb.jpg')
+    image3 = models.ImageField(upload_to='about_images/', blank=False, null=False, default='about_images/waldemar-brandt-zQsCISvBY2E-unsplash_Etj3Deb.jpg')
+    image4 = models.ImageField(upload_to='about_images/', blank=False, null=False, default='about_images/waldemar-brandt-zQsCISvBY2E-unsplash_Etj3Deb.jpg')
+
     def __str__(self):
         return "Site Settings"
     

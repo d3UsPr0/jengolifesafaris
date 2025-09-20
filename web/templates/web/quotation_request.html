@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .header { background-color: #f8f9fa; padding: 20px; text-align: center; }
+        .content { padding: 20px; }
+        .detail-item { margin-bottom: 10px; }
+        .detail-label { font-weight: bold; width: 150px; display: inline-block; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>New Quotation Request</h2>
+        </div>
+        <div class="content">
+            <p>A new quotation request has been received:</p>
+            
+            <div class="detail-item">
+                <span class="detail-label">Name:</span>
+                {{ form_data.name }}
+            </div>
+            
+            <div class="detail-item">
+                <span class="detail-label">Email:</span>
+                {{ form_data.email }}
+            </div>
+            
+            <div class="detail-item">
+                <span class="detail-label">Phone:</span>
+                {{ form_data.phone }}
+            </div>
+            
+            <div class="detail-item">
+                <span class="detail-label">Number of Adults:</span>
+                {{ form_data.adults }}
+            </div>
+            
+            <div class="detail-item">
+                <span class="detail-label">Number of Children:</span>
+                {{ form_data.children }}
+            </div>
+            
+            <div class="detail-item">
+                <span class="detail-label">Arrival Date:</span>
+                {{ form_data.arrival }}
+            </div>
+            
+            <div class="detail-item">
+                <span class="detail-label">Message:</span><br>
+                {{ form_data.message }}
+            </div>
+            
+            <p style="margin-top: 20px;">
+                <strong>Please respond to this inquiry within 24 hours.</strong>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

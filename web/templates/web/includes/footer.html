@@ -1,4 +1,71 @@
     {% load static %}
+     <!-- Latest Articles Section -->
+<section class="latest-articles py-5 bg-light section-spacing reduce-mobile">
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col text-center">
+                <h2 class="section-title d-inline-block">Latest Articles</h2>
+                <p class="lead">Discover helpful tips, wildlife insights and safari experiences from our experts</p>
+            </div>
+        </div>
+        
+        <div class="row g-4">
+            {% for article in articles %}
+            <div class="col-md-6 col-lg-4">
+                <div class="article-card card h-100 border-0 shadow-sm">
+                    <div class="position-relative">
+                        <img src="{{ article.featured_image.url }}" 
+                             class="card-img-top" alt="{{ article.title }}">
+                        <div class="article-badge position-absolute top-0 end-0 
+                                    {% if article.category == 'wildlife' %}bg-primary
+                                    {% elif article.category == 'tips' %}bg-success
+                                    {% elif article.category == 'birding' %}bg-warning text-dark
+                                    {% elif article.category == 'culture' %}bg-info
+                                    {% elif article.category == 'conservation' %}bg-danger
+                                    {% else %}bg-secondary{% endif %} 
+                                    text-white px-3 py-2 m-3 rounded">
+                            {{ article.get_category_display }}
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <small class="text-muted">
+                                <i class="far fa-calendar me-2"></i>{{ article.published_date|date:"F j, Y" }}
+                            </small>
+                            <small class="text-muted ms-3">
+                                <i class="far fa-clock me-2"></i>{{ article.read_time }} min read
+                            </small>
+                        </div>
+                        <h6 class="card-title fw-bold">{{ article.title }}</h6>
+                        <p class="card-text">{{ article.excerpt }}</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-0 pt-0">
+                        <a href="{% url 'article' article.slug %}" class="btn btn-link text-primary p-0 text-decoration-none">
+                            Read More <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center">
+                <div class="alert alert-info">
+                    No articles available at the moment.
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        {% if articles %}
+        <div class="row mt-5">
+            <div class="col text-center">
+                <a href="{% url 'blog' %}" class="btn btn-outline-primary">
+                   View all articles
+                </a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
     <!-- Footer -->
     <footer>
         <div class="container">

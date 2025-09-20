@@ -8,9 +8,10 @@
             <div class="col-lg-6">
                 <h2 class="section-title">Jengo Life Safaris</h2>
                 <p class="lead">Creating unforgettable African safari experiences since 2010.</p>
-                <p>At JengoLife Safaris, we believe in the transformative power of travel. Our expertly crafted safaris combine luxury, adventure, and authentic cultural experiences to create memories that last a lifetime.</p>
-                <p>With deep connections across East Africa, we offer access to pristine wilderness areas and unique experiences that go beyond the ordinary safari.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>
+                    {{settings.about_us|safe|linebreaks}}
+
+                </p>
                 
                 <a href="{% url 'about' %}" class="btn btn-light shadow-sm text-primary btn-all">Read more <i class="bi bi-arrow-up-right ms-2"></i></a></p>
                 <div class="row mt-4">
@@ -19,12 +20,12 @@
             <div class="col-lg-6">
                 <div class="row">
                     <div class="col-6">
-                        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 1" class="img-fluid rounded mb-3">
-                        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 2" class="img-fluid rounded">
+                        <img src="{{ settings.image1.url }}" alt="About Image 1" class="img-fluid rounded mb-3">
+                        <img src="{{ settings.image2.url }}" alt="About Image 2" class="img-fluid rounded">
                     </div>
                     <div class="col-6">
-                        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 3" class="img-fluid rounded mb-3">
-                        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About 4" class="img-fluid rounded">
+                        <img src="{{ settings.image3.url }}" alt="About Image 3" class="img-fluid rounded mb-3">
+                        <img src="{{ settings.image4.url }}" alt="About Image 4" class="img-fluid rounded">
                     </div>
                 </div>
             </div>
@@ -402,74 +403,6 @@
         <div class="text-center mt-4">
             <a href="#" class="btn btn-outline-primary">View all FAQs</a>
         </div>
-    </div>
-</section>
-
- <!-- Latest Articles Section -->
-<section class="latest-articles py-5 bg-light section-spacing reduce-mobile">
-    <div class="container">
-        <div class="row mb-3">
-            <div class="col text-center">
-                <h2 class="section-title d-inline-block">Latest Articles</h2>
-                <p class="lead">Discover helpful tips, wildlife insights and safari experiences from our experts</p>
-            </div>
-        </div>
-        
-        <div class="row g-4">
-            {% for article in articles %}
-            <div class="col-md-6 col-lg-4">
-                <div class="article-card card h-100 border-0 shadow-sm">
-                    <div class="position-relative">
-                        <img src="{{ article.featured_image.url }}" 
-                             class="card-img-top" alt="{{ article.title }}">
-                        <div class="article-badge position-absolute top-0 end-0 
-                                    {% if article.category == 'wildlife' %}bg-primary
-                                    {% elif article.category == 'tips' %}bg-success
-                                    {% elif article.category == 'birding' %}bg-warning text-dark
-                                    {% elif article.category == 'culture' %}bg-info
-                                    {% elif article.category == 'conservation' %}bg-danger
-                                    {% else %}bg-secondary{% endif %} 
-                                    text-white px-3 py-2 m-3 rounded">
-                            {{ article.get_category_display }}
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex align-items-center mb-3">
-                            <small class="text-muted">
-                                <i class="far fa-calendar me-2"></i>{{ article.published_date|date:"F j, Y" }}
-                            </small>
-                            <small class="text-muted ms-3">
-                                <i class="far fa-clock me-2"></i>{{ article.read_time }} min read
-                            </small>
-                        </div>
-                        <h6 class="card-title fw-bold">{{ article.title }}</h6>
-                        <p class="card-text">{{ article.excerpt }}</p>
-                    </div>
-                    <div class="card-footer bg-transparent border-0 pt-0">
-                        <a href="{% url 'article' article.slug %}" class="btn btn-link text-primary p-0 text-decoration-none">
-                            Read More <i class="fas fa-arrow-right ms-2"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            {% empty %}
-            <div class="col-12 text-center">
-                <div class="alert alert-info">
-                    No articles available at the moment.
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        
-        {% if articles %}
-        <div class="row mt-5">
-            <div class="col text-center">
-                <a href="{% url 'blog' %}" class="btn btn-outline-primary">
-                   View all articles
-                </a>
-            </div>
-        </div>
-        {% endif %}
     </div>
 </section>
 {% endblock %}

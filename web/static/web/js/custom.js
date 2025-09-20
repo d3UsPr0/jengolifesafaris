@@ -124,3 +124,75 @@ function initCarouselScroll(sectionId) {
     });
   }
 }
+
+// Quotation Form Submission
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('quotationForm');
+    const messageDiv = document.getElementById('formMessage');
+    const submitUrl = document.getElementById('submit_quotation_url').value;
+    
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const submitButton = form.querySelector('button[type="submit"]');
+        
+        // Show loading state
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+        messageDiv.style.display = 'none';
+        
+        // Collect form data
+        const formData = new FormData(form);
+        const jsonData = {};
+        
+        for (let [key, value] of formData.entries()) {
+            jsonData[key] = value;
+        }
+        
+        // Send AJAX request
+        fetch(submitUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}'
+            },
+            body: JSON.stringify(jsonData)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                messageDiv.className = 'alert alert-success mt-3';
+                messageDiv.innerHTML = data.message;
+                form.reset();
+            } else {
+                messageDiv.className = 'alert alert-danger mt-3';
+                messageDiv.innerHTML = data.message;
+                
+                // Show errors if available
+                if (data.errors) {
+                    const errors = Object.values(data.errors).join('<br>');
+                    messageDiv.innerHTML += '<br>' + errors;
+                }
+            }
+            messageDiv.style.display = 'block';
+            
+            // Scroll to message
+            messageDiv.scrollIntoView({ behavior: 'smooth' });
+        })
+        .catch(error => {
+            messageDiv.className = 'alert alert-danger mt-3';
+            messageDiv.innerHTML = 'An error occurred. Please try again. Error: ' + error.message;
+            messageDiv.style.display = 'block';
+            console.error('Error:', error);
+        })
+        .finally(() => {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Get a Quote';
+        });
+    });
+});

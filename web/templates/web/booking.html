@@ -1,0 +1,150 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+<section class="hero2">
+    <div class="container">
+        <h1 class="fw-bold">
+            Book Your Safari Adventure with JengoLife Safaris
+        </h1>
+        {% comment %} <a href="#" class="btn btn-primary btn-sm mt-3">Book Now</a> {% endcomment %}
+    </div>
+</section>
+
+<section id="safari" class="py-3">
+    <div class="container">
+        <div class="row">
+            <!-- Left Column: Guidelines -->
+            <div class="col-lg-9">
+                <p class="lead safari-title">
+                    Creating unforgettable African safari experiences since 2010.
+                </p>
+                <p>
+                    At JengoLife Safaris, we believe in the transformative power of travel.
+                    Our expertly crafted safaris combine luxury, adventure, and authentic cultural
+                    experiences to create memories that last a lifetime.
+                </p>
+                <p>
+                    With deep connections across East Africa, we offer access to pristine wilderness
+                    areas and unique experiences that go beyond the ordinary safari.
+                </p>
+                <p>
+                    Our team of passionate guides and travel experts are dedicated to providing
+                    personalized service, ensuring that every detail of your journey is seamless
+                    and tailored to your interests.
+                </p>
+                <p>
+                    Our commitment to sustainable tourism ensures that your journey not only enriches your life but also supports the local communities and ecosystems we visit.
+                </p>
+
+                <!-- Guidelines Section -->
+                <div class="guidelines mt-4">
+                    <h3 class="section-title" style="color: var(--primary);">Guidelines for Booking Your Safari</h3>
+                    <ul class="list-group list-group-flush mt-3">
+                        <li class="list-group-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            Choose your preferred safari package and review the itinerary carefully.
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            Confirm the number of travelers (adults & children) before booking.
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            Ensure your passport is valid for at least 6 months from your travel date.
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            Book flights early to align with your safari arrival date.
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            Consider travel insurance for peace of mind.
+                        </li>
+                        <li class="list-group-item">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            Contact our team for customizations or special requests.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Column: Quotation Form -->
+           <div class="col-lg-3">
+    <h4 class="quotation-heading fw-bold">
+        <span class="quotation-icon">
+            <i class="fas fa-file-invoice-dollar"></i>
+        </span>
+        Get Quotation
+    </h4>
+<form id="quotationForm" class="p-3 border rounded shadow-sm" style="background: var(--light);">
+    {% csrf_token %}
+    
+    <div class="mb-3">
+        <label class="form-label fw-bold" for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label fw-bold" for="email">E-Mail</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label fw-bold" for="phone">Phone</label>
+        <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" required>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col">
+            <label class="form-label fw-bold" for="adults">No. Adults</label>
+            <select id="adults" name="adults" class="form-select" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4+</option>
+            </select>
+        </div>
+        <div class="col">
+            <label class="form-label fw-bold" for="children">No. Children</label>
+            <select id="children" name="children" class="form-select" required>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3+</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label fw-bold" for="arrival">Date of Arrival</label>
+        <input type="date" class="form-control" id="arrival" name="arrival" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label fw-bold" for="message">Description</label>
+        <textarea id="message" name="message" class="form-control" rows="3" placeholder="Message" required></textarea>
+    </div>
+
+<input type="hidden" id="submit_quotation_url" value="{{ request.scheme }}://{{ request.get_host }}{% url 'submit_quotation' %}">
+
+    <button type="submit" class="btn w-100 text-white fw-bold" style="background: var(--primary);">
+        Get a Quote
+    </button>
+    
+    <div id="formMessage" class="mt-3" style="display: none;"></div>
+</form>
+
+    <div class="d-flex align-items-center border mt-4 p-3 bg-light rounded">
+        <span class="me-2" style="font-size: 1.5rem; color: var(--primary);">
+            <i class="bi bi-telephone-fill"></i>
+        </span>
+        <div>
+            <strong>Contact Us</strong><br>
+            <span>+255 788 822 792</span>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+</section>
+{% endblock %}
