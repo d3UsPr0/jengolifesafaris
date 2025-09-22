@@ -1,0 +1,192 @@
+<section class="hero2">
+    <div class="container">
+        <h1 class="fw-bold">
+            Safari Package name
+        </h1>
+        <a href="{% url 'book' %}" class="btn btn-primary btn-sm mt-3">Book Now</a>
+    </div>
+</section>
+
+<section id="safari" class="py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <p>
+                 General information about the safari package including overview, highlights, inclusions, exclusions, and itinerary.
+                </p>
+
+                <div class="itinerary mt-3">
+                    <h3 class="section-title" style="color: var(--primary);">Day-by-Day Itinerary</h3>
+                    <small class="text-muted d-block">Click a day to view details</small>
+                    <div class="accordion custom-accordion mt-3 mb-4" id="itineraryAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="day1Heading">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#day1" aria-expanded="true" aria-controls="day1">
+                                    <div class="day-header">
+                                        <div class="day-number">
+                                            <span>1</span>
+                                        </div>
+                                        <div class="day-title">
+                                            <h4 class="mb-0">Title for Day 1</h4>
+                                            <p class="text-muted mb-0">Subtitle for Day 1</p>
+                                        </div>
+                                        <div class="day-icon">
+                                            <i class="fas fa-plane-arrival"></i>
+                                        </div>
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="day1" class="accordion-collapse collapse show" aria-labelledby="day1Heading"
+                                 data-bs-parent="#itineraryAccordion">
+                                <div class="accordion-body">
+                                    <p>Description for Day 1</p>
+                                    <ul>
+                                        <li>List of activities</li>
+                                    </ul>
+                                    <!-- Package Inclusions -->
+                                    <div class="day-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-bed text-primary"></i>
+                                            <span>Arusha Hotel</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-utensils text-primary"></i>
+                                            <span>Dinner Included</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="day2Heading">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#day2" aria-expanded="false" aria-controls="day2">
+                                    <div class="day-header">
+                                        <div class="day-number">
+                                            <span>2</span>
+                                        </div>
+                                        <div class="day-title">
+                                            <h4 class="mb-0">Title for Day 2</h4>
+                                            <p class="text-muted mb-0">Subtitle for Day 2</p>
+                                        </div>
+                                        <div class="day-icon">
+                                            <i class="fas fa-elephant"></i>
+                                        </div>
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="day2" class="accordion-collapse collapse" aria-labelledby="day2Heading"
+                                 data-bs-parent="#itineraryAccordion">
+                                <div class="accordion-body">
+                                    <p>Description for Day 2</p>
+                                    <ul>
+                                        <li>List of activities</li>
+                                    </ul>
+                                    <div class="day-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-bed text-primary"></i>
+                                            <span>Lodge in Tarangire</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-utensils text-primary"></i>
+                                            <span>Meal</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-binoculars text-primary"></i>
+                                            <span>Game Drives</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="day3Heading">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#day3" aria-expanded="false" aria-controls="day3">
+                                    <div class="day-header">
+                                        <div class="day-number">
+                                            <span>3</span>
+                                        </div>
+                                        <div class="day-title">
+                                            <h4 class="mb-0">Title for Day 3</h4>
+                                            <p class="text-muted mb-0">Subtitle for Day 3</p>
+                                        </div>
+                                        <div class="day-icon">
+                                            <i class="fas fa-lion"></i>
+                                        </div>
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="day3" class="accordion-collapse collapse" aria-labelledby="day3Heading"
+                                 data-bs-parent="#itineraryAccordion">
+                                <div class="accordion-body">
+                                    <p>Description for Day 3</p>
+                                    <ul>
+                                        <li>List of activities</li>
+                                    </ul>
+                                    <div class="day-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-bed text-primary"></i>
+                                            <span>Serengeti Lodge</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-utensils text-primary"></i>
+                                            <span>Meals</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-car text-primary"></i>
+                                            <span>Scenic Drive</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="day4Heading">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#day4" aria-expanded="false" aria-controls="day4">
+                                    <div class="day-header">
+                                        <div class="day-number">
+                                            <span>4</span>
+                                        </div>
+                                        <div class="day-title">
+                                            <h4 class="mb-0">Title for Day 4</h4>
+                                            <p class="text-muted mb-0">Subtitle for Day 4</p>
+                                        </div>
+                                        <div class="day-icon">
+                                            <i class="fas fa-camera"></i>
+                                        </div>
+                                    </div>
+                                </button>
+                            </h2>
+                            <div id="day4" class="accordion-collapse collapse" aria-labelledby="day4Heading"
+                                 data-bs-parent="#itineraryAccordion">
+                                <div class="accordion-body">
+                                    <p>Description for Day 4</p>
+                                    <ul>
+                                        <li>List of activities</li>
+                                    </ul>
+                                    <div class="day-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-bed text-primary"></i>
+                                            <span>Serengeti Lodge</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-utensils text-primary"></i>
+                                            <span>Meals</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-binoculars text-primary"></i>
+                                            <span>Game Drive</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>

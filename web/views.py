@@ -56,11 +56,14 @@ def destinations(request):
 def safari(request, slug):
     # Get a single safari package detail
     safari_package = get_object_or_404(SafariPackage, slug=slug)
+    itinerary_days = safari_package.itinerary_days.all()
     
     context = {
-        'safari_package': safari_package
+        'safari_package': safari_package,
+        'itinerary_days': itinerary_days,
     }
     return render(request, 'web/safari.html', context)
+
 def safaris(request):
     # List all safari packages
     safari_packages = SafariPackage.objects.all()
@@ -88,6 +91,7 @@ def article(request, slug):
 
 def booking(request):
     return render(request, 'web/booking.html')
+
 @csrf_exempt
 @require_POST
 def submit_quotation(request):

@@ -21,10 +21,10 @@ class ItineraryDayInline(admin.TabularInline):  # Inline editing inside SafariPa
 
 @admin.register(SafariPackage)
 class SafariPackageAdmin(admin.ModelAdmin):
-    list_display = ("title", "package_type", "price_per_person", "is_featured", "created_at")
+    list_display = ("package_name", "package_type", "price_per_person", "is_featured", "created_at")
     list_filter = ("package_type", "is_featured", "destinations")
-    search_fields = ("title", "short_description", "detailed_description")
-    prepopulated_fields = {"slug": ("title",)}
+    search_fields = ("package_name", "short_description", "detailed_description")
+    prepopulated_fields = {"slug": ("package_name",)}
     inlines = [ItineraryDayInline]
 
 

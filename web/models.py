@@ -30,7 +30,7 @@ class SafariPackage(models.Model):
         ('group', 'Group Safari'),
     )
     
-    title = models.CharField(max_length=200)
+    package_name = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, blank=True)
     short_description = models.TextField()
     detailed_description = CKEditor5Field(config_name='default')
@@ -49,16 +49,17 @@ class SafariPackage(models.Model):
     
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.title)
+            self.slug = slugify(self.package_name)
         super().save(*args, **kwargs)
     
     def __str__(self):
-        return self.title
+        return self.package_name
     
 class ItineraryDay(models.Model):
     safari_package = models.ForeignKey(SafariPackage, on_delete=models.CASCADE, related_name='itinerary_days')
     day_number = models.IntegerField()
     title = models.CharField(max_length=200)
+    subtitle = models.CharField(max_length=200, blank=True)
     description = models.TextField()
     accommodation = models.CharField(max_length=200, blank=True)
     meals_included = models.CharField(max_length=100, blank=True)

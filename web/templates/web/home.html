@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row align-items-start">
             <div class="col-lg-6">
-                <h2 class="section-title">Jengo Life Safaris</h2>
+                <h5 class="section-title">Jengo Life Safaris</h5>
                 <p class="lead">Creating unforgettable African safari experiences since 2010.</p>
                 <p>
                     {{settings.about_us|safe|linebreaks}}
@@ -60,7 +60,7 @@
     <section id="destinations" class="bg-light ">
             <div class="container-fluid">
                 <div class="text-center">
-                    <h2 class="section-title d-inline-block">Top Destinations</h2>
+                    <h5 class="section-title d-inline-block">Top Destinations</h5>
                     <!-- flex wrapper for paragraph + button -->
                     <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
                     <p class="lead mb-0">Discover our most sought-after safari experiences</p>
@@ -120,7 +120,7 @@
 <section id="safaris" class="bg-light">
     <div class="container-fluid">
         <div class="text-center">
-            <h2 class="section-title d-inline-block">Popular Safari Packages</h2>
+            <h5 class="section-title d-inline-block">Popular Safari Packages</h5>
     
             <!-- flex wrapper for paragraph + button -->
             <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
@@ -145,12 +145,12 @@
                     <div class="safari-package-card">
                         <div class="package-image-container">
                             {% if package.featured_image %}
-                                <img src="{{ package.featured_image.url }}" alt="{{ package.title }}">
+                                <img src="{{ package.featured_image.url }}" alt="{{ package.package_name }}">
                             {% else %}
-                                <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="{{ package.title }}">
+                                <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="{{ package.package_name }}">
                             {% endif %}
                             <div class="package-title-overlay">
-                                <h5>{{ package.title }}</h5>
+                                <h5>{{ package.package_name }}</h5>
                             </div>
                         </div>
                         <div class="package-details">
@@ -210,9 +210,9 @@
     <section class="py-5 text-center section-spacing reduce-mobile">
         <div class="container">
             <!-- Heading -->
-            <h2 class="section-title d-inline-block">
-                Why Choose <br> Jengo Life Safaris?
-            </h2>
+            <h5 class="section-title d-inline-block">
+                Why Jengo Life Safaris?
+            </h5>
 
             <!-- 3 Columns -->
             <div class="row">
@@ -222,7 +222,7 @@
                         <div class="why-choose-icon">
                             <i class="bi bi-person-fill"></i>
                         </div>
-                        <h5 class="why-choose-title fw-semibold">Expert Guides</h5>
+                        <h6 class="why-choose-title fw-semibold">Expert Guides</h6>
                         <p class="text-muted">
                             Our knowledgeable and experienced guides are passionate about wildlife and conservation. 
                             They are dedicated to providing you with insightful and safe safari experiences.
@@ -236,7 +236,7 @@
                         <div class="why-choose-icon">
                             <i class="bi bi-compass-fill"></i>
                         </div>
-                        <h5 class="why-choose-title fw-semibold">Tailored Journeys</h5>
+                        <h6 class="why-choose-title fw-semibold">Tailored Journeys</h6>
                         <p class="text-muted">
                             From luxurious honeymoons to family-friendly adventures and everything in between, 
                             our safaris are designed to cater to your interests and ensure you have the trip of a lifetime.
@@ -250,7 +250,7 @@
                         <div class="why-choose-icon">
                             <i class="bi bi-flower3"></i>
                         </div>
-                        <h5 class="why-choose-title fw-semibold">Reliable Safety</h5>
+                        <h6 class="why-choose-title fw-semibold">Reliable Safety</h6>
                         <p class="text-muted">
                             We are committed to responsible tourism practices that protect the environment and 
                             contribute to local communities.
@@ -265,7 +265,7 @@
 <section id="testimonials" class="">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-title d-inline-block">What Our Travelers Say</h2>
+            <h5 class="section-title d-inline-block">What Our Travelers Say</h5>
             <p class="lead">Authentic experiences from our guests</p>
         </div>
         <div class="row">
@@ -280,7 +280,7 @@
                             <img src="https://via.placeholder.com/60x60" alt="{{ testimonial.client_name }}" class="testimonial-img">
                         {% endif %}
                         <div>
-                            <h5 class="mb-0">{{ testimonial.client_name }}</h5>
+                            <h6 class="mb-0">{{ testimonial.client_name }}</h6>
                             <p class="text-muted mb-0">{{ testimonial.country }}</p>
                         </div>
                     </div>
@@ -309,7 +309,7 @@
     <section id="contact" class="py-5 bg-light section-spacing reduce-mobile">
         <div class="container">
             <div class="text-center mb-3">
-                <h2 class="section-title d-inline-block">Contact Us</h2>
+                <h5 class="section-title d-inline-block">Contact Us</h5>
                 <p class="lead">Ready to plan your Tanzania adventure? Get in touch!</p>
             </div>
 
@@ -372,7 +372,7 @@
 <section id="faq" class="py-5 bg-light section-spacing reduce-mobile">
     <div class="container">
         <div class="text-center mb-3">
-            <h2 class="section-title d-inline-block">Frequently Asked Questions</h2>
+            <h5 class="section-title d-inline-block">Frequently Asked Questions</h5>
             <p class="lead">Let's answer some of the most popular travel questions.</p>
         </div>
 
