@@ -37,10 +37,15 @@ def destination(request, slug):
     # Get the destination by slug or return 404
     destination = get_object_or_404(Destination, slug=slug)
 
+    # Get other destinations except current
+    other_destinations = Destination.objects.exclude(id=destination.id)
+
     context = {
-        'destination': destination
+        'destination': destination,
+        'other_destinations': other_destinations
     }
     return render(request, 'web/destination.html', context)
+
 
 def destinations(request):
     # Get all destinations or filter as needed

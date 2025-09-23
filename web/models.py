@@ -7,8 +7,8 @@ from django.contrib.auth.models import User
 class Destination(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(unique=True, blank=True)  # allow auto-fill
-    description = models.TextField()
     image = models.ImageField(upload_to='destinations/')
+    description = models.TextField()
     best_time_to_visit = models.CharField(max_length=200)
     wildlife = models.TextField(help_text="Common wildlife sightings")
     is_popular = models.BooleanField(default=False)

@@ -91,7 +91,7 @@
                 </div>
             </div>
             <div class="package-details">
-                <p>{{ destination.description|truncatewords:30 }}</p>
+                <p>{{ destination.description|truncatewords:10 }}</p>
                 <div class="text-center">
                     <a href="{% url 'destination' destination.slug %}" 
                     class="btn btn-outline-primary btn-sm">View details <i class="fas fa-arrow-right ms-1"></i></a>
