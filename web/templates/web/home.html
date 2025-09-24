@@ -39,17 +39,17 @@
             <div class="row text-center">
 
                 <div class="col-md-4">
-                    <h2 class="counter fw-bold" data-target="15">0</h2>
+                    <h3 class="counter fw-bold" data-target="15">0</h3>
                     <p class="text-muted">Years of Experience</p>
                 </div>
 
                 <div class="col-md-4">
-                    <h2 class="counter fw-bold" data-target="230">0</h2>
+                    <h3 class="counter fw-bold" data-target="230">0</h3>
                     <p class="text-muted">Happy Customers</p>
                 </div>
 
                 <div class="col-md-4">
-                    <h2 class="counter fw-bold" data-target="125">0</h2>
+                    <h3 class="counter fw-bold" data-target="125">0</h3>
                     <p class="text-muted">Accommodations</p>
                 </div>
             </div>
@@ -70,7 +70,7 @@
         
         <div class="position-relative">
             <!-- Left Navigation Button -->
-            <button class="carousel-btn carousel-btn-left ms-2" aria-label="Previous packages">
+            <button class="carousel-btn carousel-btn-left ms-2" aria-label="Previous destination">
                 <i class="fas fa-chevron-left"></i>
             </button>
             
@@ -108,7 +108,7 @@
 </div>
             
             <!-- Right Navigation Button -->
-            <button class="carousel-btn carousel-btn-right me-2" aria-label="Next packages">
+            <button class="carousel-btn carousel-btn-right me-2" aria-label="Next destination">
                 <i class="fas fa-chevron-right"></i>
             </button>
         </div>
@@ -347,15 +347,16 @@
                 <div class="col-lg-4 ps-lg-5">
                     <div class="mb-4">
                         <h5 class="mb-3">Contact Information</h5>
-                        <p><i class="fas fa-map-marker-alt text-secondary me-2"></i> 123 Safari Road, Arusha, Tanzania</p>
-                        <p><i class="fas fa-phone text-secondary me-2"></i> +255 700 123 456</p>
-                        <p><i class="fas fa-envelope text-secondary me-2"></i> info@jengolifesafaris.com</p>
+                        <p><i class="fas fa-map-marker-alt text-secondary me-2"></i>{{settings.address}}</p>
+                        <p><i class="fas fa-phone text-secondary me-2"></i>{{settings.contact_phone1}}</p>
+                        <p><i class="fas fa-phone text-secondary me-2"></i>{{settings.contact_phone2}}</p>
+                        <p><i class="fas fa-envelope text-secondary me-2"></i>{{settings.contact_email}}</p>
                     </div>
                     <div>
                         <h5 class="mb-3">Office Hours</h5>
-                        <p class="mb-1">Monday - Friday: 8:00 AM - 6:00 PM</p>
-                        <p class="mb-1">Saturday: 9:00 AM - 4:00 PM</p>
-                        <p>Sunday: Closed</p>
+                        <p class="mb-1">{{ settings.mon_fri_hours }}</p>
+                        <p class="mb-1">{{ settings.saturday_hours }}</p>
+                        <p>{{ settings.sunday_hours }}</p>
                     </div>
                     <div class="social-icons mt-4">
                         <a href="#"><i class="fab fa-facebook-f text-success"></i></a>

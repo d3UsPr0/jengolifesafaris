@@ -8,7 +8,7 @@ class Destination(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(unique=True, blank=True)  # allow auto-fill
     image = models.ImageField(upload_to='destinations/')
-    description = models.TextField()
+    description = CKEditor5Field(config_name='default')
     best_time_to_visit = models.CharField(max_length=200)
     wildlife = models.TextField(help_text="Common wildlife sightings")
     is_popular = models.BooleanField(default=False)
@@ -208,11 +208,16 @@ class GalleryImage(models.Model):
         return self.title
 
 class SiteSetting(models.Model):
-    site_name = models.CharField(max_length=100)
-    contact_email = models.EmailField()
-    contact_phone = models.CharField(max_length=20)
-    address = models.TextField()
-    office_hours = models.TextField()
+    site_name = models.CharField(max_length=100, default="Jengo Life Safaris")
+    contact_email = models.EmailField(default="info@jengolifesafaris.com")
+    contact_phone1 = models.CharField(max_length=20, default="+255 746 191 024")
+    contact_phone2 = models.CharField(max_length=20, default="+255 768 025 228")
+    address = models.TextField(max_length=200, default="Ntagacha St, Arusha, Tanzania")
+
+    # Office hours
+    mon_fri_hours = models.CharField(max_length=50, default="Monday - Friday: 8:00 AM - 6:00 PM")
+    saturday_hours = models.CharField(max_length=50, default="Saturday: 9:00 AM - 5:00 PM")
+    sunday_hours = models.CharField(max_length=50, default="Sunday: Closed")
 
     # Social links
     facebook_url = models.URLField(blank=True)

@@ -67,8 +67,8 @@ class GalleryImageAdmin(admin.ModelAdmin):
 
 @admin.register(SiteSetting)
 class SiteSettingAdmin(admin.ModelAdmin):
-    list_display = ("site_name", "contact_email", "contact_phone")
-    search_fields = ("site_name", "contact_email", "contact_phone")
+    list_display = ("site_name", "contact_email", "contact_phone1")
+    search_fields = ("site_name", "contact_email", "contact_phone1")
 
 @admin.register(Testimonial)
 class TestimonialAdmin(admin.ModelAdmin):
