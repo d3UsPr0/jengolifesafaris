@@ -164,7 +164,6 @@
                                     {% endfor %}
                                 </li>
                                 <li class="mb-1"><i class="fas fa-users text-secondary me-2"></i> Max {{ package.max_people }} People</li>
-                                <li class="mb-1"><i class="fas fa-tag text-secondary me-2"></i> ${{ package.price_per_person }} per person</li>
                             </ul>
                             <div class="text-center">
                                 <a href="{% url 'safari' package.slug %}" class="btn btn-outline-primary btn-sm">
@@ -341,8 +340,13 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
                     </form> {% endcomment %}
-                    <h1>Trust Our Expertise <br>for an Unforgettable Adventure!</h1>
-                    <h5 class="mt-3">JengoLife Safaris - Your journey into the heart of Tanzania. We specialize in crafting unforgettable, tailor-made adventures. Whether you dream of conquering Kilimanjaro, witnessing the Great Migration, or immersing yourself in local culture, we'll design an experience as unique as you are. Welcome to a world of meaningful travel. Karibuni wote</h5>
+                    {% comment %} <h1>Trust Our Expertise <br>for an Unforgettable Adventure!</h1>
+                    <h5 class="mt-3">JengoLife Safaris - Your journey into the heart of Tanzania. We specialize in crafting unforgettable, tailor-made adventures. Whether you dream of conquering Kilimanjaro, witnessing the Great Migration, or immersing yourself in local culture, we'll design an experience as unique as you are. Welcome to a world of meaningful travel. Karibuni wote</h5> {% endcomment %}
+                    <div class="text-center mt-3">
+                    <img src="{{ gallery.image.url }}"
+                         alt="{{ gallery.title }}"
+                         class="img-fluid rounded shadow d-block mx-auto">
+                </div>
                 </div>
 
                 <!-- Contact Info -->

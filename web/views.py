@@ -8,7 +8,7 @@ from django.views.decorators.http import require_POST
 from .forms import QuotationForm
 import json
 from django.shortcuts import get_object_or_404, render
-from .models import FAQ, BlogPost, Destination, SafariPackage, Testimonial
+from .models import FAQ, BlogPost, Destination, GalleryImage, SafariPackage, Testimonial
 from django.core.mail import send_mail
 from django.http import HttpResponse
 
@@ -19,6 +19,7 @@ def home(request):
     safari_packages = SafariPackage.objects.filter(is_featured=True)
     testimonials = Testimonial.objects.filter(is_featured=True).order_by('-created_at')[:3]
     faqs = FAQ.objects.filter(is_active=True).order_by('order', 'question')
+    gallery = GalleryImage.objects.first()  # Assuming you want the first gallery image
     articles = BlogPost.objects.filter(
         is_published=True,
         published_date__lte=timezone.now()
@@ -30,6 +31,7 @@ def home(request):
         'testimonials': testimonials,
         'faqs': faqs,
         'articles': articles,
+        'gallery': gallery,
     }
     return render(request, 'web/home.html', context)
 

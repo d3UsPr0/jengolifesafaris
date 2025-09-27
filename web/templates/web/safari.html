@@ -35,6 +35,11 @@
                             {% endfor %}
                         </ul>
                     </div>
+                    
+                    
+                    <p>
+    Ready for the adventure of a lifetime? This exclusive safari package is available starting from just <strong> ${{ safari_package.price_per_person }} per person</strong>, offering incredible value and an unforgettable experience. Book your journey today!
+</p>
                 </div>
 
                 <!-- Itinerary -->
@@ -114,7 +119,12 @@
     {% csrf_token %}
     
     <div class="mb-3">
-        <label class="form-label fw-bold" for="name">Name</label>
+        <label class="form-label fw-bold" for="name">Package selected</label>
+        <input type="text" class="form-control" id="pname" name="pname"  required disabled value="{{ safari_package.package_name }}">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label fw-bold" for="name">Your name</label>
         <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
     </div>
 
@@ -131,11 +141,11 @@
     <div class="row mb-3">
         <div class="col">
             <label class="form-label fw-bold" for="adults">No. Adults</label>
-            <select id="adults" name="adults" class="form-select" required>
-                <option value="1">1</option>
-                <option value="2">2</option>
+            <select id="adults" name="adults" class="form-select" required disabled>
+                <option value="1">{{ safari_package.max_people }}</option>
+                {% comment %} <option value="2">2</option>
                 <option value="3">3</option>
-                <option value="4">4+</option>
+                <option value="4">4+</option> {% endcomment %}
             </select>
         </div>
         <div class="col">
@@ -181,77 +191,4 @@
         </div>
     </div>
 </section>
-<!-- Safari Packages Section -->
-{% comment %} <section id="safaris" class="bg-light">
-    <div class="container-fluid">
-        <div class="text-center">
-            <h5 class="section-title d-inline-block">Popular Safari Packages</h5>
-    
-            <!-- flex wrapper for paragraph + button -->
-            <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
-                <p class="lead mb-0">Discover our most sought-after safari experiences</p>
-                <a href="{% url 'safaris' %}" class="btn btn-light rounded-pill shadow-sm px-4 py-2 text-primary btn-all">
-                    View all Safari packages <i class="bi bi-arrow-up-right ms-2"></i>
-                </a>
-            </div>
-        </div>
-    
-        <div class="position-relative">
-            <!-- Left Navigation Button -->
-            <button class="carousel-btn carousel-btn-left ms-2" aria-label="Previous packages">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            
-            <!-- Safari Packages Container -->
-            <div class="safari-packages-container">
-                <div class="safari-packages-scroll">
-                    {% for package in safari_packages %}
-                    <!-- Dynamic Card for each Safari Package -->
-                    <div class="safari-package-card">
-                        <div class="package-image-container">
-                            {% if package.featured_image %}
-                                <img src="{{ package.featured_image.url }}" alt="{{ package.package_name }}">
-                            {% else %}
-                                <img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="{{ package.package_name }}">
-                            {% endif %}
-                            <div class="package-title-overlay">
-                                <h5>{{ package.package_name }}</h5>
-                            </div>
-                        </div>
-                        <div class="package-details">
-                            <ul class="list-unstyled">
-                                <li class="mb-1"><i class="fas fa-calendar-alt text-secondary me-2"></i> {{ package.duration_days }} Days / {{ package.duration_nights }} Nights</li>
-                                <li class="mb-1"><i class="fas fa-map-marker-alt text-secondary me-2"></i> 
-                                    {% for destination in package.destinations.all %}
-                                        {{ destination.name }}{% if not forloop.last %}, {% endif %}
-                                    {% empty %}
-                                        Multiple Destinations
-                                    {% endfor %}
-                                </li>
-                                <li class="mb-1"><i class="fas fa-users text-secondary me-2"></i> Max {{ package.max_people }} People</li>
-                                <li class="mb-1"><i class="fas fa-tag text-secondary me-2"></i> ${{ package.price_per_person }} per person</li>
-                            </ul>
-                            <div class="text-center">
-                                <a href="{% url 'safari' package.slug %}" class="btn btn-outline-primary btn-sm">
-                                    View Safari <i class="fas fa-arrow-right ms-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    {% empty %}
-                    <!-- Fallback if no safari packages -->
-                    <div class="col-12 text-center">
-                        <p class="text-muted">No safari packages available at the moment.</p>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-            
-            <!-- Right Navigation Button -->
-            <button class="carousel-btn carousel-btn-right me-2" aria-label="Next packages">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-        </div>
-    </div>
-</section> {% endcomment %}
 {% endblock %}
